@@ -185,6 +185,7 @@
     <Content Include="plantilla\startup-website-template.jpg" />
     <Content Include="plantilla\team.html" />
     <Content Include="plantilla\testimonial.html" />
+    <Content Include="Propietario.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -276,6 +277,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propietario.aspx.cs">
+      <DependentUpon>Propietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario.aspx.designer.cs">
+      <DependentUpon>Propietario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
