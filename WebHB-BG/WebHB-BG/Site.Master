@@ -65,7 +65,7 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="Default.aspx" class="nav-item nav-link active">Inicio</a>
                         <a href="/" class="nav-item nav-link">Predio</a>
-                        <a href="/" class="nav-item nav-link">Propietario Predio</a>
+                        <a href="PropietarioPredio.aspx" class="nav-item nav-link">Propietario Predio</a>
                         <a href="Propietario.aspx" class="nav-item nav-link">Propietario</a>
                         
                     </div>
