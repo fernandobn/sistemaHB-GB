@@ -121,6 +121,70 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="plantilla\about.html" />
+    <Content Include="plantilla\blog.html" />
+    <Content Include="plantilla\contact.html" />
+    <Content Include="plantilla\css\bootstrap.min.css" />
+    <Content Include="plantilla\css\style.css" />
+    <Content Include="plantilla\datatables\dataTables.dataTables.min.css" />
+    <Content Include="plantilla\datatables\dataTables.min.js" />
+    <Content Include="plantilla\detail.html" />
+    <Content Include="plantilla\feature.html" />
+    <Content Include="plantilla\img\about.jpg" />
+    <Content Include="plantilla\img\blog-1.jpg" />
+    <Content Include="plantilla\img\blog-2.jpg" />
+    <Content Include="plantilla\img\blog-3.jpg" />
+    <Content Include="plantilla\img\carousel-1.jpg" />
+    <Content Include="plantilla\img\carousel-2.jpg" />
+    <Content Include="plantilla\img\feature.jpg" />
+    <Content Include="plantilla\img\municipalidad.ico" />
+    <Content Include="plantilla\img\team-1.jpg" />
+    <Content Include="plantilla\img\team-2.jpg" />
+    <Content Include="plantilla\img\team-3.jpg" />
+    <Content Include="plantilla\img\testimonial-1.jpg" />
+    <Content Include="plantilla\img\testimonial-2.jpg" />
+    <Content Include="plantilla\img\testimonial-3.jpg" />
+    <Content Include="plantilla\img\testimonial-4.jpg" />
+    <Content Include="plantilla\img\user.jpg" />
+    <Content Include="plantilla\img\vendor-1.jpg" />
+    <Content Include="plantilla\img\vendor-2.jpg" />
+    <Content Include="plantilla\img\vendor-3.jpg" />
+    <Content Include="plantilla\img\vendor-4.jpg" />
+    <Content Include="plantilla\img\vendor-5.jpg" />
+    <Content Include="plantilla\img\vendor-6.jpg" />
+    <Content Include="plantilla\img\vendor-7.jpg" />
+    <Content Include="plantilla\img\vendor-8.jpg" />
+    <Content Include="plantilla\img\vendor-9.jpg" />
+    <Content Include="plantilla\index.html" />
+    <Content Include="plantilla\js\jquery-3.7.1.js" />
+    <Content Include="plantilla\js\jquery.validate.js" />
+    <Content Include="plantilla\js\main.js" />
+    <Content Include="plantilla\lib\animate\animate.css" />
+    <Content Include="plantilla\lib\animate\animate.min.css" />
+    <Content Include="plantilla\lib\counterup\counterup.min.js" />
+    <Content Include="plantilla\lib\easing\easing.js" />
+    <Content Include="plantilla\lib\easing\easing.min.js" />
+    <Content Include="plantilla\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="plantilla\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="plantilla\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="plantilla\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="plantilla\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="plantilla\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="plantilla\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="plantilla\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="plantilla\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="plantilla\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="plantilla\lib\waypoints\waypoints.min.js" />
+    <Content Include="plantilla\lib\wow\wow.js" />
+    <Content Include="plantilla\lib\wow\wow.min.js" />
+    <Content Include="plantilla\LICENSE.txt" />
+    <Content Include="plantilla\price.html" />
+    <Content Include="plantilla\quote.html" />
+    <Content Include="plantilla\READ-ME.txt" />
+    <Content Include="plantilla\service.html" />
+    <Content Include="plantilla\startup-website-template.jpg" />
+    <Content Include="plantilla\team.html" />
+    <Content Include="plantilla\testimonial.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -149,6 +213,8 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="plantilla\lib\owlcarousel\LICENSE" />
+    <Content Include="plantilla\lib\waypoints\links.php" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -219,12 +285,14 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
