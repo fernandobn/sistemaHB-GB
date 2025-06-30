@@ -1,0 +1,26 @@
+# Archivos y carpetas que deben ser ignorados por Visual Studio y .NET
+
+# Carpeta de configuración local de Visual Studio
+.vs/
+*.user
+*.suo
+
+# Directorios de compilación
+bin/
+obj/
+
+# Archivos temporales
+*.log
+*.tmp
+*.cache
+
+# Archivos de depuración
+*.pdb
+*.dll
+
+# Configuraciones de usuario
+*.dbmdl
+*.local.json
+
+# VS Code settings (opcional)
+.vscode/
