@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\guayt\\Documents\\web\\ASP\\6\\sistemaHB-GB\\WebHB-BG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|C:\\Users\\guayt\\Documents\\web\\ASP\\6\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\guayt\\documents\\web\\asp\\6\\sistemahb-gb\\webhb-bg\\webhb-bg\\predio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\predio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\guayt\\documents\\web\\asp\\6\\sistemahb-gb\\webhb-bg\\webhb-bg\\predio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\predio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|C:\\Users\\guayt\\Documents\\web\\ASP\\6\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 46,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Predio.aspx.cs",
               "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\6\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Predio.aspx.cs",
               "RelativeDocumentMoniker": "WebHB-BG\\Predio.aspx.cs",
               "ToolTip": "C:\\Users\\guayt\\Documents\\web\\ASP\\6\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Predio.aspx.cs",
               "RelativeToolTip": "WebHB-BG\\Predio.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAcwKoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-01T00:55:41.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Predio.aspx",
               "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\6\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Predio.aspx",
               "RelativeDocumentMoniker": "WebHB-BG\\Predio.aspx",
@@ -52,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Site.Master",
               "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\6\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Site.Master",
               "RelativeDocumentMoniker": "WebHB-BG\\Site.Master",
