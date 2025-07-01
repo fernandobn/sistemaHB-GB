@@ -24,3 +24,35 @@ obj/
 
 # VS Code settings (opcional)
 .vscode/
+
+# Carpeta de paquetes NuGet (para projects con packages.config)
+packages/
+
+# Archivos NuGet propios
+*.nupkg
+*.nuspec
+
+# Resharper
+_ReSharper*/
+*.resharper
+
+# Rider IDE
+.idea/
+
+# Carpetas de test y cobertura de código
+TestResults/
+coverage/
+
+# Archivos generados por herramientas
+*.generated.cs
+*.g.cs
+
+# Configuraciones específicas de Visual Studio
+*.VC.db
+*.VC.VC.opendb
+
+# Archivos de bloqueo
+*.lock.json
+
+# Si usas dotnet CLI y PackageReference, ignorar carpeta global de paquetes (opcional)
+# ~/.nuget/packages/
