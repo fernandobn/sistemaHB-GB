@@ -25,6 +25,8 @@
                 <div class="row g-3">
                     <!-- COLUMNA 1 -->
                     <div class="col-md-6">
+                        <asp:Label ID="Label5" runat="server" Text="Tipo de identifacación"></asp:Label>
+
                         <asp:DropDownList ID="ddlTipoIdentificacion" runat="server" CssClass="form-select select2 mb-3" AppendDataBoundItems="true">
                             <asp:ListItem Text="Seleccione Tipo Identificación" Value="" />
                         </asp:DropDownList>
@@ -39,10 +41,14 @@
 
                         <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control mb-3" Placeholder="Fecha de Nacimiento" TextMode="Date" />
                         <br />
+                        <asp:Label ID="Label4" runat="server" Text="Estado Civil"></asp:Label>
+
                         <asp:DropDownList ID="ddlEstadoCivil" runat="server" CssClass="form-select select2 mb-3" AppendDataBoundItems="true">
                             <asp:ListItem Text="Seleccione Estado Civil" Value="" />
                         </asp:DropDownList>
                         <br />
+                        <asp:Label ID="Label3" runat="server" Text="Sexo"></asp:Label>
+
                         <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-select mb-3">
                             <asp:ListItem Text="Seleccione Sexo" Value="" />
                             <asp:ListItem Text="Masculino" Value="1" />
@@ -59,8 +65,9 @@
                         <asp:TextBox ID="txtCodigoPostal" runat="server" CssClass="form-control mb-3" Placeholder="Código Postal" MaxLength="20" />
                         <asp:TextBox ID="txtNroConadis" runat="server" CssClass="form-control mb-3" Placeholder="Nro. Conadis" MaxLength="50" />
                         <asp:TextBox ID="txtPorcentajeConadis" runat="server" CssClass="form-control mb-3" Placeholder="% Discapacidad" TextMode="Number" />
+                        <asp:Label ID="Label2" runat="server" Text="Tipo de persona"></asp:Label>
 
-                        <asp:DropDownList ID="ddlTipoPersona" runat="server" CssClass="form-select select2 mb-3" AppendDataBoundItems="true">
+                        <asp:DropDownList ID="ddlTipoPersona" runat="server" CssClass="form-select select2 mb-3" AppendDataBoundItems="true" Visible="false">
                             <asp:ListItem Text="Seleccione Tipo Persona" Value="" />
                         </asp:DropDownList>
                         <br />
@@ -70,10 +77,11 @@
 
                         <asp:TextBox ID="txtRuc" runat="server" CssClass="form-control mb-3" Placeholder="RUC" MaxLength="13" />
                         <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="form-control mb-3" Placeholder="Razón Social (Persona Natural)" MaxLength="255" />
-
+                        <asp:Label ID="Label1" runat="server" Text="Fecha de nacimiento"></asp:Label>
                         <asp:TextBox ID="txtFechaFallecido" runat="server" CssClass="form-control mb-3" Placeholder="Fecha Fallecido" TextMode="Date" />
                     </div>
                 </div>
+                <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
 
                 <asp:HiddenField ID="hfPropietarioID" runat="server" />
 
@@ -85,7 +93,7 @@
             <br />
             <br />
             <asp:GridView ID="gvPropietarios" runat="server" AutoGenerateColumns="False"
-                AllowPaging="False" PageSize="10" OnPageIndexChanging="gvPropietarios_PageIndexChanging"
+                AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPropietarios_PageIndexChanging"
                 CssClass="datatbemp table table-bordered table-striped" PagerStyle-CssClass="pagination"
                 HeaderStyle-CssClass="thead-light" UseAccessibleHeader="true">
 
@@ -183,9 +191,9 @@
         }
     </script>
 
-    
 
-   
+
+
 
     <script>
         $(document).ready(function () {

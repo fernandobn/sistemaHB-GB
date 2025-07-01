@@ -121,42 +121,177 @@ namespace WebHB_BG
             }
         }
 
+        private object GetDbValue(string value)
+        {
+            return string.IsNullOrWhiteSpace(value) ? (object)DBNull.Value : value.Trim();
+        }
+
+        private object GetDbValue(int? value)
+        {
+            return value.HasValue ? (object)value.Value : DBNull.Value;
+        }
+
+        private object GetDbValue(decimal? value)
+        {
+            return value.HasValue ? (object)value.Value : DBNull.Value;
+        }
+
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (var conn = new NpgsqlConnection(cadenaConexion))
-            using (var cmd = new NpgsqlCommand("gestion.insertar_propietario", conn))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
+                using (var conn = new NpgsqlConnection(cadenaConexion))
+                {
+                    conn.Open();
 
-                cmd.Parameters.AddWithValue("p_tipo_identificacion", string.IsNullOrEmpty(ddlTipoIdentificacion.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlTipoIdentificacion.SelectedValue));
-                cmd.Parameters.AddWithValue("p_identificacion", txtIdentificacion.Text.Trim());
-                cmd.Parameters.AddWithValue("p_nombre", txtNombre.Text.Trim());
-                cmd.Parameters.AddWithValue("p_apellido", txtApellido.Text.Trim());
-                cmd.Parameters.AddWithValue("p_ciudad", txtCiudad.Text.Trim());
-                cmd.Parameters.AddWithValue("p_domicilio", txtDomicilio.Text.Trim());
-                cmd.Parameters.AddWithValue("p_referencia", txtReferencia.Text.Trim());
-                cmd.Parameters.AddWithValue("p_fecha_nacimiento", string.IsNullOrEmpty(txtFechaNacimiento.Text) ? (object)DBNull.Value : DateTime.Parse(txtFechaNacimiento.Text));
-                cmd.Parameters.AddWithValue("p_estado_civil", string.IsNullOrEmpty(ddlEstadoCivil.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlEstadoCivil.SelectedValue));
-                cmd.Parameters.AddWithValue("p_sexo", string.IsNullOrEmpty(ddlSexo.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlSexo.SelectedValue));
-                cmd.Parameters.AddWithValue("p_correo", txtCorreo.Text.Trim());
-                cmd.Parameters.AddWithValue("p_telefono1", txtTelefono1.Text.Trim());
-                cmd.Parameters.AddWithValue("p_telefono2", txtTelefono2.Text.Trim());
-                cmd.Parameters.AddWithValue("p_codigo_postal", txtCodigoPostal.Text.Trim());
-                cmd.Parameters.AddWithValue("p_nro_conadis", txtNroConadis.Text.Trim());
-                cmd.Parameters.AddWithValue("p_porcentaje_discapacidad", string.IsNullOrEmpty(txtPorcentajeConadis.Text) ? (object)DBNull.Value : Convert.ToDecimal(txtPorcentajeConadis.Text));
-                cmd.Parameters.AddWithValue("p_tipo_persona", string.IsNullOrEmpty(ddlTipoPersona.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlTipoPersona.SelectedValue));
-                cmd.Parameters.AddWithValue("p_numero_registro", txtNumeroRegistro.Text.Trim());
-                cmd.Parameters.AddWithValue("p_inscrito_en", txtInscritoEn.Text.Trim());
-                cmd.Parameters.AddWithValue("p_lugar_inscripcion", txtLugarInscripcion.Text.Trim());
-                cmd.Parameters.AddWithValue("p_ruc", txtRuc.Text.Trim());
-                cmd.Parameters.AddWithValue("p_razon_social", txtRazonSocial.Text.Trim());
-                cmd.Parameters.AddWithValue("p_fecha_fallecido", string.IsNullOrEmpty(txtFechaFallecido.Text) ? (object)DBNull.Value : DateTime.Parse(txtFechaFallecido.Text));
+                    string sql = @"INSERT INTO gestion.ges_propietario (
+                opc_tipoidentificacion,
+                pro_num_identificacion,
+                pro_nombre,
+                pro_apellido,
+                pro_direccion_ciudad,
+                pro_direccion_domicilio,
+                pro_direccion_referencia,
+                pro_fecha_nacimiento,
+                opc_estado_civil,
+                pro_sexo,
+                pro_correo_electronico,
+                pro_telefono1,
+                pro_telefono2,
+                pro_codigo_postal,
+                pro_nro_conadis,
+                pro_porcentaje_conadis,
+                opc_tipo_conadis,
+                pro_validado,
+                opc_tipo_entidad,
+                pro_tipo_persona,
+                pro_numero_registro,
+                pro_genero,
+                pro_inscrito_en,
+                pro_lugar_inscripcion,
+                pro_id_cliente,
+                pro_tiene_ruc,
+                pro_ruc,
+                pro_razon_social_pn,
+                pro_fecha_fallecido
+            ) VALUES (
+                @p_opc_tipoidentificacion,
+                @p_pro_num_identificacion,
+                @p_pro_nombre,
+                @p_pro_apellido,
+                @p_pro_direccion_ciudad,
+                @p_pro_direccion_domicilio,
+                @p_pro_direccion_referencia,
+                @p_pro_fecha_nacimiento,
+                @p_opc_estado_civil,
+                @p_pro_sexo,
+                @p_pro_correo_electronico,
+                @p_pro_telefono1,
+                @p_pro_telefono2,
+                @p_pro_codigo_postal,
+                @p_pro_nro_conadis,
+                @p_pro_porcentaje_conadis,
+                @p_opc_tipo_conadis,
+                @p_pro_validado,
+                @p_opc_tipo_entidad,
+                @p_pro_tipo_persona,
+                @p_pro_numero_registro,
+                @p_pro_genero,
+                @p_pro_inscrito_en,
+                @p_pro_lugar_inscripcion,
+                @p_pro_id_cliente,
+                @p_pro_tiene_ruc,
+                @p_pro_ruc,
+                @p_pro_razon_social_pn,
+                @p_pro_fecha_fallecido
+            );";
 
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("p_opc_tipoidentificacion",
+                            string.IsNullOrEmpty(ddlTipoIdentificacion.SelectedValue)
+                            ? DBNull.Value
+                            : (object)Convert.ToInt32(ddlTipoIdentificacion.SelectedValue));
+
+                        cmd.Parameters.AddWithValue("p_pro_num_identificacion", GetDbValue(txtIdentificacion.Text));
+                        cmd.Parameters.AddWithValue("p_pro_nombre", GetDbValue(txtNombre.Text));
+                        cmd.Parameters.AddWithValue("p_pro_apellido", GetDbValue(txtApellido.Text));
+                        cmd.Parameters.AddWithValue("p_pro_direccion_ciudad", GetDbValue(txtCiudad.Text));
+                        cmd.Parameters.AddWithValue("p_pro_direccion_domicilio", GetDbValue(txtDomicilio.Text));
+                        cmd.Parameters.AddWithValue("p_pro_direccion_referencia", GetDbValue(txtReferencia.Text));
+
+                        DateTime fNac;
+                        if (DateTime.TryParse(txtFechaNacimiento.Text, out fNac))
+                            cmd.Parameters.AddWithValue("p_pro_fecha_nacimiento", fNac);
+                        else
+                            cmd.Parameters.AddWithValue("p_pro_fecha_nacimiento", DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("p_opc_estado_civil",
+                            string.IsNullOrEmpty(ddlEstadoCivil.SelectedValue)
+                            ? DBNull.Value
+                            : (object)Convert.ToInt32(ddlEstadoCivil.SelectedValue));
+
+                        cmd.Parameters.AddWithValue("p_pro_sexo",
+                            string.IsNullOrEmpty(ddlSexo.SelectedValue)
+                            ? DBNull.Value
+                            : (object)Convert.ToInt32(ddlSexo.SelectedValue));
+
+                        cmd.Parameters.AddWithValue("p_pro_correo_electronico", GetDbValue(txtCorreo.Text));
+                        cmd.Parameters.AddWithValue("p_pro_telefono1", GetDbValue(txtTelefono1.Text));
+                        cmd.Parameters.AddWithValue("p_pro_telefono2", GetDbValue(txtTelefono2.Text));
+                        cmd.Parameters.AddWithValue("p_pro_codigo_postal", GetDbValue(txtCodigoPostal.Text));
+                        cmd.Parameters.AddWithValue("p_pro_nro_conadis", GetDbValue(txtNroConadis.Text));
+
+                        decimal porc;
+                        if (decimal.TryParse(txtPorcentajeConadis.Text, out porc))
+                            cmd.Parameters.AddWithValue("p_pro_porcentaje_conadis", porc);
+                        else
+                            cmd.Parameters.AddWithValue("p_pro_porcentaje_conadis", DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("p_opc_tipo_conadis", DBNull.Value);
+                        cmd.Parameters.AddWithValue("p_pro_validado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("p_opc_tipo_entidad", DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("p_pro_tipo_persona",
+                            string.IsNullOrEmpty(ddlTipoPersona.SelectedValue)
+                            ? DBNull.Value
+                            : (object)Convert.ToInt32(ddlTipoPersona.SelectedValue));
+
+                        cmd.Parameters.AddWithValue("p_pro_numero_registro", GetDbValue(txtNumeroRegistro.Text));
+                        cmd.Parameters.AddWithValue("p_pro_genero", DBNull.Value);
+                        cmd.Parameters.AddWithValue("p_pro_inscrito_en", GetDbValue(txtInscritoEn.Text));
+                        cmd.Parameters.AddWithValue("p_pro_lugar_inscripcion", GetDbValue(txtLugarInscripcion.Text));
+                        cmd.Parameters.AddWithValue("p_pro_id_cliente", DBNull.Value);
+                        cmd.Parameters.AddWithValue("p_pro_tiene_ruc", 0);  // smallint, no boolean
+
+                        cmd.Parameters.AddWithValue("p_pro_ruc", GetDbValue(txtRuc.Text)); // Asumo que tienes txtRuc, si no, agrega o cambia
+                        cmd.Parameters.AddWithValue("p_pro_razon_social_pn", GetDbValue(txtRazonSocial.Text));
+
+                        DateTime fFal;
+                        if (DateTime.TryParse(txtFechaFallecido.Text, out fFal))
+                            cmd.Parameters.AddWithValue("p_pro_fecha_fallecido", fFal);
+                        else
+                            cmd.Parameters.AddWithValue("p_pro_fecha_fallecido", DBNull.Value);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                Response.Redirect("Propietario.aspx?msg=guardado");
             }
-            Response.Redirect("Propietario.aspx?msg=guardado");
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al guardar: " + ex.Message;
+            }
         }
+
+
+
+
+
+
+
+
+
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
