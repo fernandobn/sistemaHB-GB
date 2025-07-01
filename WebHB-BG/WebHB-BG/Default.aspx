@@ -9,8 +9,8 @@
                     <img class="w-100" src="plantilla/img/carousel-1.jpg" alt="Catálogo Municipal" style="height: 100vh; object-fit: cover;" />
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Gad Municipal</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Catálogo de Servicios Municipales</h1>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Gad Municipal Mejia</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Servicios Municipales</h1>
                             <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Agregar Nuevo Catálogo</a>
                             <a href="#" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Ver Catálogos</a>
                         </div>
@@ -20,7 +20,7 @@
                     <img class="w-100" src="plantilla/img/carousel-2.jpg" alt="Servicios Municipales" style="height: 100vh; object-fit: cover;" />
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Gad Municipal</h5>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Gad Municipal Mejia</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Servicios para la Comunidad</h1>
                             <a href="/servicios.aspx" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Servicios</a>
                         </div>
