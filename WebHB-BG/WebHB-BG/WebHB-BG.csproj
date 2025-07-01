@@ -155,6 +155,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="MapaPredio.aspx" />
     <Content Include="plantilla\about.html" />
     <Content Include="plantilla\blog.html" />
     <Content Include="plantilla\contact.html" />
@@ -219,6 +220,7 @@
     <Content Include="plantilla\startup-website-template.jpg" />
     <Content Include="plantilla\team.html" />
     <Content Include="plantilla\testimonial.html" />
+    <Content Include="Predio.aspx" />
     <Content Include="Propietario.aspx" />
     <Content Include="PropietarioPredio.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -310,6 +312,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MapaPredio.aspx.cs">
+      <DependentUpon>MapaPredio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapaPredio.aspx.designer.cs">
+      <DependentUpon>MapaPredio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Predio.aspx.cs">
+      <DependentUpon>Predio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Predio.aspx.designer.cs">
+      <DependentUpon>Predio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Propietario.aspx.cs">

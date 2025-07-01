@@ -261,3 +261,5 @@ C:\Users\guayt\Documents\web\ASP\6\sistemaHB-GB\WebHB-BG\WebHB-BG\obj\Debug\WebH
 C:\Users\guayt\Documents\web\ASP\6\sistemaHB-GB\WebHB-BG\WebHB-BG\obj\Debug\WebHB-BG.csproj.Up2Date
 C:\Users\guayt\Documents\web\ASP\6\sistemaHB-GB\WebHB-BG\WebHB-BG\obj\Debug\WebHB-BG.dll
 C:\Users\guayt\Documents\web\ASP\6\sistemaHB-GB\WebHB-BG\WebHB-BG\obj\Debug\WebHB-BG.pdb
+C:\Users\guayt\Documents\web\ASP\6\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\ProjNET.dll
+C:\Users\guayt\Documents\web\ASP\6\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\ProjNET.xml
