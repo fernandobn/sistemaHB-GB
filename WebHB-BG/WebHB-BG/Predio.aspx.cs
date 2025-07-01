@@ -10,6 +10,8 @@ namespace WebHB_BG
     public partial class Predio : Page
     {
         string cadenaConexion = ConfigurationManager.ConnectionStrings["conexionGad"].ConnectionString;
+
+        // public DataTable dtPredios { get; set; } = new DataTable();
         public DataTable dtPredios = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
