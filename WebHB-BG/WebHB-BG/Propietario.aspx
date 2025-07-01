@@ -85,8 +85,9 @@
             <br />
             <br />
             <asp:GridView ID="gvPropietarios" runat="server" AutoGenerateColumns="False"
-                AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPropietarios_PageIndexChanging"
-                CssClass="table table-bordered table-striped" PagerStyle-CssClass="pagination">
+                AllowPaging="False" PageSize="10" OnPageIndexChanging="gvPropietarios_PageIndexChanging"
+                CssClass="datatbemp table table-bordered table-striped" PagerStyle-CssClass="pagination"
+                HeaderStyle-CssClass="thead-light" UseAccessibleHeader="true">
 
                 <Columns>
                     <asp:BoundField DataField="pro_id" HeaderText="ID" />
@@ -121,41 +122,120 @@
             let errores = [];
 
             if ($("#<%= ddlTipoIdentificacion.ClientID %>").val() === "")
-            errores.push("Debe seleccionar el tipo de identificación.");
-        if ($("#<%= txtIdentificacion.ClientID %>").val().trim() === "")
-            errores.push("Debe ingresar el número de identificación.");
-        if ($("#<%= txtNombre.ClientID %>").val().trim() === "")
-            errores.push("Debe ingresar el nombre.");
-        if ($("#<%= txtApellido.ClientID %>").val().trim() === "")
-            errores.push("Debe ingresar el apellido.");
-        if ($("#<%= ddlEstadoCivil.ClientID %>").val() === "")
-            errores.push("Debe seleccionar el estado civil.");
-        if ($("#<%= ddlSexo.ClientID %>").val() === "")
-            errores.push("Debe seleccionar el sexo.");
+                errores.push("Debe seleccionar el tipo de identificación.");
+            if ($("#<%= txtIdentificacion.ClientID %>").val().trim() === "")
+                errores.push("Debe ingresar el número de identificación.");
+            if ($("#<%= txtNombre.ClientID %>").val().trim() === "")
+                errores.push("Debe ingresar el nombre.");
+            if ($("#<%= txtApellido.ClientID %>").val().trim() === "")
+                errores.push("Debe ingresar el apellido.");
+            if ($("#<%= ddlEstadoCivil.ClientID %>").val() === "")
+                errores.push("Debe seleccionar el estado civil.");
+            if ($("#<%= ddlSexo.ClientID %>").val() === "")
+                errores.push("Debe seleccionar el sexo.");
 
-        if (errores.length > 0) {
-            errores.forEach(function (mensaje) {
-                iziToast.error({
-                    title: 'Error',
-                    message: mensaje,
-                    position: 'topRight'
+            if (errores.length > 0) {
+                errores.forEach(function (mensaje) {
+                    iziToast.error({
+                        title: 'Error',
+                        message: mensaje,
+                        position: 'topRight'
+                    });
                 });
-            });
-            return false; // Evita el postback
+                return false; // Evita el postback
+            }
+
+            return true; // Continúa con el postback
         }
 
-        return true; // Continúa con el postback
-    }
+        $(document).ready(function () {
+            $("#<%= btnGuardar.ClientID %>").click(function () {
+                return validarFormulario();
+            });
 
-    $(document).ready(function () {
-        $("#<%= btnGuardar.ClientID %>").click(function () {
-            return validarFormulario();
+            $("#<%= btnActualizar.ClientID %>").click(function () {
+                return validarFormulario();
+            });
         });
-
-        $("#<%= btnActualizar.ClientID %>").click(function () {
-            return validarFormulario();
-        });
-    });
     </script>
+    <script>
+        function confirmarEliminacion(event, id) {
+            event.preventDefault();
+            iziToast.question({
+                timeout: 20000,
+                close: false,
+                overlay: true,
+                displayMode: 'once',
+                title: '¿Confirmar?',
+                message: '¿Deseas eliminar este propietario?',
+                position: 'center',
+                buttons: [
+                    ['<button><b>SÍ</b></button>', function (instance, toast) {
+                        __doPostBack('<%= gvPropietarios.UniqueID %>', 'Eliminar$' + id);
+                        instance.hide({}, toast, 'button');
+                    }],
+                    ['<button>NO</button>', function (instance, toast) {
+                        instance.hide({}, toast, 'button');
+                    }]
+                ]
+            });
+            return false;
+        }
+    </script>
+
+    
+
+   
+
+    <script>
+        $(document).ready(function () {
+            $(".datatbemp").DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+                },
+                "order": [[0, "asc"]], // Ordenar por la primera columna (ID) ascendente
+
+                "columnDefs": [
+                    { "targets": [0, 1, 2, 3], "orderable": true },
+                    { "targets": 4, "orderable": false } // Acciones no ordenables
+                ],
+
+                "dom": 'Bfrtip',
+                "buttons": [
+                    {
+                        extend: 'copy',
+                        text: '<i class="fas fa-copy"></i> Copiar',
+                        className: 'btn btn-outline-primary btn-sm mx-1'
+                    },
+                    {
+                        extend: 'excel',
+                        text: '<i class="fas fa-file-excel"></i> Excel',
+                        className: 'btn btn-outline-success btn-sm mx-1'
+                    },
+                    {
+                        extend: 'pdf',
+                        text: '<i class="fas fa-file-pdf"></i> PDF',
+                        className: 'btn btn-outline-danger btn-sm mx-1',
+                        customize: function (doc) {
+                            doc.styles.tableHeader.fontSize = 12;
+                            doc.styles.tableBody.fontSize = 10;
+                            doc.content[1].margin = [0, 10, 0, 10];
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fas fa-print"></i> Imprimir',
+                        className: 'btn btn-outline-secondary btn-sm mx-1'
+                    }
+                ]
+            });
+        });
+        console.log($(".datatbemp thead tr th").length);
+        console.log($(".datatbemp tbody tr:first-child td").length);
+
+    </script>
+
+
+
 
 </asp:Content>

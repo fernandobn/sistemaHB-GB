@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebHB_BG.SiteMaster" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head runat="server">
@@ -49,7 +50,7 @@
                 </div>
             </div>
         </div>
-         
+
         <!-- Navbar -->
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
@@ -67,7 +68,7 @@
                         <a href="Predio.aspx" class="nav-item nav-link">Predio</a>
                         <a href="PropietarioPredio.aspx" class="nav-item nav-link">Propietario Predio</a>
                         <a href="Propietario.aspx" class="nav-item nav-link">Propietario</a>
-                        
+
                     </div>
                 </div>
             </nav>
@@ -115,5 +116,12 @@
     <script src="plantilla/lib/counterup/counterup.min.js"></script>
     <script src="plantilla/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="plantilla/js/main.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </body>
 </html>
