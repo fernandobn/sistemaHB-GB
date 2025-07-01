@@ -32,6 +32,22 @@ namespace WebHB_BG
                     btnActualizar.Visible = false;
                 }
             }
+            string msg = Request.QueryString["msg"];
+            if (!string.IsNullOrEmpty(msg))
+            {
+                string script = "";
+                switch (msg)
+                {
+                    case "guardado":
+                        script = "iziToast.success({ title: 'Éxito', message: 'Propietario guardado correctamente', position: 'topRight' });";
+                        break;
+                    case "actualizado":
+                        script = "iziToast.success({ title: 'Éxito', message: 'Propietario actualizado correctamente', position: 'topRight' });";
+                        break;
+                }
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "toastMessage", script, true);
+            }
         }
 
         // Nuevo método que carga cada catálogo llamando a funciones PostgreSQL separadas
@@ -139,7 +155,7 @@ namespace WebHB_BG
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
-            Response.Redirect("Propietario.aspx");
+            Response.Redirect("Propietario.aspx?msg=guardado");
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -180,7 +196,7 @@ namespace WebHB_BG
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
-            Response.Redirect("Propietario.aspx");
+            Response.Redirect("Propietario.aspx?msg=actualizado");
         }
         private void CargarPropietarios()
         {

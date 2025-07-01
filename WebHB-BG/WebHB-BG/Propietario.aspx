@@ -82,7 +82,8 @@
                     <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-warning btn-lg rounded ms-3" OnClick="btnActualizar_Click" />
                 </div>
             </asp:Panel>
-
+            <br />
+            <br />
             <asp:GridView ID="gvPropietarios" runat="server" AutoGenerateColumns="False"
                 AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPropietarios_PageIndexChanging"
                 CssClass="table table-bordered table-striped" PagerStyle-CssClass="pagination">
@@ -115,4 +116,46 @@
             });
         });
     </script>
+    <script>
+        function validarFormulario() {
+            let errores = [];
+
+            if ($("#<%= ddlTipoIdentificacion.ClientID %>").val() === "")
+            errores.push("Debe seleccionar el tipo de identificación.");
+        if ($("#<%= txtIdentificacion.ClientID %>").val().trim() === "")
+            errores.push("Debe ingresar el número de identificación.");
+        if ($("#<%= txtNombre.ClientID %>").val().trim() === "")
+            errores.push("Debe ingresar el nombre.");
+        if ($("#<%= txtApellido.ClientID %>").val().trim() === "")
+            errores.push("Debe ingresar el apellido.");
+        if ($("#<%= ddlEstadoCivil.ClientID %>").val() === "")
+            errores.push("Debe seleccionar el estado civil.");
+        if ($("#<%= ddlSexo.ClientID %>").val() === "")
+            errores.push("Debe seleccionar el sexo.");
+
+        if (errores.length > 0) {
+            errores.forEach(function (mensaje) {
+                iziToast.error({
+                    title: 'Error',
+                    message: mensaje,
+                    position: 'topRight'
+                });
+            });
+            return false; // Evita el postback
+        }
+
+        return true; // Continúa con el postback
+    }
+
+    $(document).ready(function () {
+        $("#<%= btnGuardar.ClientID %>").click(function () {
+            return validarFormulario();
+        });
+
+        $("#<%= btnActualizar.ClientID %>").click(function () {
+            return validarFormulario();
+        });
+    });
+    </script>
+
 </asp:Content>
