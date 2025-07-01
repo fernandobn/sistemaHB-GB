@@ -439,5 +439,76 @@ namespace WebHB_BG
             gvPropietarios.PageIndex = e.NewPageIndex;
             CargarPropietarios();
         }
+        protected void EliminarPropietario(int id)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(cadenaConexion))
+                {
+                    string sql = "DELETE FROM gestion.ges_propietario WHERE pro_id = @id";
+
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al eliminar: " + ex.Message;
+            }
+        }
+        protected void gvPropietarios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Eliminar")
+            {
+                // Obtener el ID del propietario a eliminar
+                int proId;
+                if (int.TryParse(e.CommandArgument.ToString(), out proId))
+                {
+                    try
+                    {
+                        using (var conn = new Npgsql.NpgsqlConnection(cadenaConexion))
+                        {
+                            conn.Open();
+                            string sql = "DELETE FROM gestion.ges_propietario WHERE pro_id = @pro_id";
+
+                            using (var cmd = new Npgsql.NpgsqlCommand(sql, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@pro_id", proId);
+                                int filasAfectadas = cmd.ExecuteNonQuery();
+
+                                if (filasAfectadas > 0)
+                                {
+                                    // Recargar la lista para reflejar el cambio
+                                    CargarPropietarios();
+
+                                    // Mostrar mensaje de éxito (puedes usar iziToast con ScriptManager)
+                                    string script = "iziToast.success({ title: 'Éxito', message: 'Propietario eliminado correctamente', position: 'topRight' });";
+                                    ScriptManager.RegisterStartupScript(this, GetType(), "msgEliminar", script, true);
+                                }
+                                else
+                                {
+                                    lblMensaje.Text = "No se encontró el propietario para eliminar.";
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        lblMensaje.Text = "Error al eliminar: " + ex.Message;
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "ID inválido para eliminar.";
+                }
+            }
+        }
+
+
+
     }
 }

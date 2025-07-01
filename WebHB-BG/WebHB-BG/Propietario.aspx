@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Propietario.aspx.cs" Inherits="WebHB_BG.Propietario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Propietario.aspx.cs" Inherits="WebHB_BG.Propietario" EnableEventValidation="false" %>
 
 <%@ Import Namespace="System.Data" %>
 
@@ -95,7 +95,7 @@
             <asp:GridView ID="gvPropietarios" runat="server" AutoGenerateColumns="False"
                 AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPropietarios_PageIndexChanging"
                 CssClass="datatbemp table table-bordered table-striped" PagerStyle-CssClass="pagination"
-                HeaderStyle-CssClass="thead-light" UseAccessibleHeader="true">
+                HeaderStyle-CssClass="thead-light" UseAccessibleHeader="true" OnRowCommand="gvPropietarios_RowCommand">
 
                 <Columns>
                     <asp:BoundField DataField="pro_id" HeaderText="ID" />
@@ -106,9 +106,9 @@
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
                             <a href='Propietario.aspx?edit=<%# Eval("pro_id") %>' class="btn btn-sm btn-warning">Editar</a>
-                            <a href='Propietario.aspx?delete=<%# Eval("pro_id") %>'
-                                class="btn btn-sm btn-danger ms-2"
-                                onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
+                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument='<%# Eval("pro_id") %>'
+                                CssClass="btn btn-danger btn-sm" OnClientClick='<%# "return confirmarEliminacion(event, " + Eval("pro_id") + ");" %>'
+ />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
