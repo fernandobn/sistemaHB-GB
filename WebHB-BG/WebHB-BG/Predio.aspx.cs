@@ -97,9 +97,18 @@ namespace WebHB_BG
                 {
                     dtPredios = new DataTable();
                     da.Fill(dtPredios);
+                    gvPredios.DataSource = dtPredios;
+                    gvPredios.DataBind();
                 }
             }
         }
+        protected void gvPredios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPredios.PageIndex = e.NewPageIndex;
+            CargarPredios(); // Recarga los datos para la nueva página
+        }
+
+
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {

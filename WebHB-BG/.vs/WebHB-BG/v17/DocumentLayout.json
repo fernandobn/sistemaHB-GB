@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\user\\source\\repos\\sistemahb-gb\\webhb-bg\\webhb-bg\\propietariopredio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\propietariopredio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\user\\source\\repos\\sistemahb-gb\\webhb-bg\\webhb-bg\\predio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\predio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\user\\source\\repos\\sistemahb-gb\\webhb-bg\\webhb-bg\\propietario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\propietario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\user\\source\\repos\\sistemahb-gb\\webhb-bg\\webhb-bg\\propietariopredio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\propietariopredio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\propietario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\propietario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\user\\source\\repos\\sistemahb-gb\\webhb-bg\\webhb-bg\\predio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\predio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
@@ -43,32 +31,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PropietarioPredio.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx.cs",
-              "RelativeDocumentMoniker": "WebHB-BG\\PropietarioPredio.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx.cs*",
-              "RelativeToolTip": "WebHB-BG\\PropietarioPredio.aspx.cs*",
-              "ViewState": "AQIAABMAAAAAAAAAAAAEwCQAAAAOAAAA",
+              "Title": "Predio.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Predio.aspx.cs",
+              "RelativeDocumentMoniker": "WebHB-BG\\Predio.aspx.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Predio.aspx.cs",
+              "RelativeToolTip": "WebHB-BG\\Predio.aspx.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAiwGIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T00:13:30.793Z",
+              "WhenOpened": "2025-07-02T22:56:11.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Predio.aspx",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Predio.aspx",
+              "RelativeDocumentMoniker": "WebHB-BG\\Predio.aspx",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Predio.aspx",
+              "RelativeToolTip": "WebHB-BG\\Predio.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-02T22:49:30.403Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PropietarioPredio.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx",
-              "RelativeDocumentMoniker": "WebHB-BG\\PropietarioPredio.aspx",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx",
-              "RelativeToolTip": "WebHB-BG\\PropietarioPredio.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-02T00:10:02.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Site.Master",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Site.Master",
               "RelativeDocumentMoniker": "WebHB-BG\\Site.Master",
@@ -77,45 +65,6 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-07-01T21:39:17.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Propietario.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Propietario.aspx.cs",
-              "RelativeDocumentMoniker": "WebHB-BG\\Propietario.aspx.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Propietario.aspx.cs",
-              "RelativeToolTip": "WebHB-BG\\Propietario.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T20:51:50.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Propietario.aspx",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Propietario.aspx",
-              "RelativeDocumentMoniker": "WebHB-BG\\Propietario.aspx",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Propietario.aspx",
-              "RelativeToolTip": "WebHB-BG\\Propietario.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-01T20:43:04.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Web.config",
-              "RelativeDocumentMoniker": "WebHB-BG\\Web.config",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Web.config",
-              "RelativeToolTip": "WebHB-BG\\Web.config",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAcwBsAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-07-01T20:22:43.082Z",
               "EditorCaption": ""
             }
           ]

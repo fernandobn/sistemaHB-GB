@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Predio.aspx.cs" Inherits="WebHB_BG.Predio" %>
+
 <%@ Import Namespace="System.Data" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -100,36 +101,29 @@
                 </div>
             </asp:Panel>
 
-            <!-- TABLA DE LISTADO -->
-            <div class="table-responsive mt-5">
-                <table class="table table-bordered table-striped">
-                    <thead class="table-primary">
-                        <tr>
-                            <th>ID</th>
-                            <th>Código Catastral</th>
-                            <th>Nombre Predio</th>
-                            <th>Mapa</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% foreach (DataRow row in dtPredios.Rows) { %>
-                            <tr>
-                                <td><%= row["pre_id"] %></td>
-                                <td><%= row["pre_codigo_catastral"] %></td>
-                                <td><%= row["pre_nombre_predio"] %></td>
-                                <td class="text-center">
-                                    <a href='MapaPredio.aspx?id=<%= row["pre_id"] %>' target="_blank">🗺️</a>
-                                </td>
-                                <td>
-                                    <a href='Predio.aspx?edit=<%= row["pre_id"] %>' class="btn btn-sm btn-warning">Editar</a>
-                                    <a href='Predio.aspx?delete=<%= row["pre_id"] %>' class="btn btn-sm btn-danger ms-2" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
-                                </td>
-                            </tr>
-                        <% } %>
-                    </tbody>
-                </table>
-            </div>
+            <asp:GridView ID="gvPredios" runat="server" CssClass="table table-bordered table-striped"
+                AllowPaging="true" PageSize="10" AutoGenerateColumns="False"
+                OnPageIndexChanging="gvPredios_PageIndexChanging">
+                <HeaderStyle CssClass="table-primary" />
+                <Columns>
+                    <asp:BoundField DataField="pre_id" HeaderText="ID" />
+                    <asp:BoundField DataField="pre_codigo_catastral" HeaderText="Código Catastral" />
+                    <asp:BoundField DataField="pre_nombre_predio" HeaderText="Nombre Predio" />
+                    <asp:TemplateField HeaderText="Mapa">
+                        <ItemTemplate>
+                            <a href='MapaPredio.aspx?id=<%# Eval("pre_id") %>' target="_blank">🗺️</a>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Acciones">
+                        <ItemTemplate>
+                            <a href='Predio.aspx?edit=<%# Eval("pre_id") %>' class="btn btn-sm btn-warning">Editar</a>
+                            <a href='Predio.aspx?delete=<%# Eval("pre_id") %>' class="btn btn-sm btn-danger ms-2"
+                                onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+
         </div>
     </div>
 
