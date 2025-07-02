@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Predio.aspx.cs" Inherits="WebHB_BG.Predio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Predio.aspx.cs" Inherits="WebHB_BG.Predio" EnableEventValidation="false" %>
 
 <%@ Import Namespace="System.Data" %>
 
@@ -100,10 +100,11 @@
                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary btn-lg rounded" OnClick="btnGuardar_Click" />
                 </div>
             </asp:Panel>
-
+            <br />
+            <br />
             <asp:GridView ID="gvPredios" runat="server" CssClass="table table-bordered table-striped"
                 AllowPaging="true" PageSize="10" AutoGenerateColumns="False"
-                OnPageIndexChanging="gvPredios_PageIndexChanging">
+                OnPageIndexChanging="gvPredios_PageIndexChanging" OnRowCommand="gvPredios_RowCommand">
                 <HeaderStyle CssClass="table-primary" />
                 <Columns>
                     <asp:BoundField DataField="pre_id" HeaderText="ID" />
@@ -117,8 +118,8 @@
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
                             <a href='Predio.aspx?edit=<%# Eval("pre_id") %>' class="btn btn-sm btn-warning">Editar</a>
-                            <a href='Predio.aspx?delete=<%# Eval("pre_id") %>' class="btn btn-sm btn-danger ms-2"
-                                onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
+                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument='<%# Eval("pre_id") %>'
+                                CssClass="btn btn-danger btn-sm" OnClientClick='<%# "return confirmarEliminacionPredio(event, " + Eval("pre_id") + ");" %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -137,4 +138,76 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        function mostrarMensaje(tipo, mensaje) {
+            iziToast[tipo]({
+                title: tipo === 'success' ? 'Éxito' : 'Error',
+                message: mensaje,
+                position: 'topRight'
+            });
+        }
+    </script>
+    <script>
+        function validarFormularioPredio() {
+            let errores = [];
+
+            if ($("#<%= txtCodigo.ClientID %>").val().trim() === "")
+                errores.push("Debe ingresar el Código Catastral.");
+            if ($("#<%= txtNombre.ClientID %>").val().trim() === "")
+                errores.push("Debe ingresar el Nombre del Predio.");
+            if ($("#<%= ddlDominio.ClientID %>").val() === "")
+                errores.push("Debe seleccionar el Dominio.");
+            if ($("#<%= ddlCondicionOcupacion.ClientID %>").val() === "")
+                errores.push("Debe seleccionar la Condición de Ocupación.");
+            if ($("#<%= ddlClasificacionVivienda.ClientID %>").val() === "")
+                errores.push("Debe seleccionar la Clasificación de Vivienda.");
+            if ($("#<%= ddlManzana.ClientID %>").val() === "")
+                errores.push("Debe seleccionar una Manzana.");
+
+            if (errores.length > 0) {
+                errores.forEach(function (mensaje) {
+                    iziToast.error({
+                        title: 'Error',
+                        message: mensaje,
+                        position: 'topRight'
+                    });
+                });
+                return false; // Evita el postback si hay errores
+            }
+
+            return true; // Permite el postback si no hay errores
+        }
+
+        $(document).ready(function () {
+            $("#<%= btnGuardar.ClientID %>").click(function () {
+                return validarFormularioPredio();
+            });
+        });
+    </script>
+    <script>
+        function confirmarEliminacionPredio(event, id) {
+            event.preventDefault();
+            iziToast.question({
+                timeout: 20000,
+                close: false,
+                overlay: true,
+                displayMode: 'once',
+                title: '¿Confirmar?',
+                message: '¿Deseas eliminar este predio?',
+                position: 'center',
+                buttons: [
+                    ['<button><b>SÍ</b></button>', function (instance, toast) {
+                        __doPostBack('<%= gvPredios.UniqueID %>', 'Eliminar$' + id);
+                        instance.hide({}, toast, 'button');
+                    }],
+                    ['<button>NO</button>', function (instance, toast) {
+                        instance.hide({}, toast, 'button');
+                    }]
+                ]
+            });
+            return false;
+        }
+    </script>
+
+
 </asp:Content>

@@ -112,45 +112,60 @@ namespace WebHB_BG
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (var conn = new NpgsqlConnection(cadenaConexion))
+            try
             {
-                conn.Open();
-
-                if (Request.QueryString["edit"] != null)
+                using (var conn = new NpgsqlConnection(cadenaConexion))
                 {
-                    using (var cmd = new NpgsqlCommand("catastro.actualizar_predio", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("p_pre_id", Convert.ToInt32(Request.QueryString["edit"]));
-                        cmd.Parameters.AddWithValue("p_pre_codigo_catastral", txtCodigo.Text.Trim());
-                        cmd.Parameters.AddWithValue("p_pre_nombre_predio", txtNombre.Text.Trim());
-                        cmd.Parameters.AddWithValue("p_pre_dominio", string.IsNullOrEmpty(ddlDominio.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlDominio.SelectedValue));
-                        cmd.Parameters.AddWithValue("p_opc_condicion_ocupacion", string.IsNullOrEmpty(ddlCondicionOcupacion.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlCondicionOcupacion.SelectedValue));
-                        cmd.Parameters.AddWithValue("p_opc_clasificacion_vivienda", string.IsNullOrEmpty(ddlClasificacionVivienda.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlClasificacionVivienda.SelectedValue));
-                        cmd.Parameters.AddWithValue("p_man_id", string.IsNullOrEmpty(ddlManzana.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlManzana.SelectedValue));
+                    conn.Open();
 
-                        cmd.ExecuteNonQuery();
+                    if (Request.QueryString["edit"] != null)
+                    {
+                        using (var cmd = new NpgsqlCommand("catastro.actualizar_predio", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("p_pre_id", Convert.ToInt32(Request.QueryString["edit"]));
+                            cmd.Parameters.AddWithValue("p_pre_codigo_catastral", txtCodigo.Text.Trim());
+                            cmd.Parameters.AddWithValue("p_pre_nombre_predio", txtNombre.Text.Trim());
+                            cmd.Parameters.AddWithValue("p_pre_dominio", string.IsNullOrEmpty(ddlDominio.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlDominio.SelectedValue));
+                            cmd.Parameters.AddWithValue("p_opc_condicion_ocupacion", string.IsNullOrEmpty(ddlCondicionOcupacion.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlCondicionOcupacion.SelectedValue));
+                            cmd.Parameters.AddWithValue("p_opc_clasificacion_vivienda", string.IsNullOrEmpty(ddlClasificacionVivienda.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlClasificacionVivienda.SelectedValue));
+                            cmd.Parameters.AddWithValue("p_man_id", string.IsNullOrEmpty(ddlManzana.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlManzana.SelectedValue));
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        using (var cmd = new NpgsqlCommand("catastro.insertar_predio", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("p_pre_codigo_catastral", txtCodigo.Text.Trim());
+                            cmd.Parameters.AddWithValue("p_pre_nombre_predio", txtNombre.Text.Trim());
+                            cmd.Parameters.AddWithValue("p_pre_dominio", string.IsNullOrEmpty(ddlDominio.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlDominio.SelectedValue));
+                            cmd.Parameters.AddWithValue("p_opc_condicion_ocupacion", string.IsNullOrEmpty(ddlCondicionOcupacion.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlCondicionOcupacion.SelectedValue));
+                            cmd.Parameters.AddWithValue("p_opc_clasificacion_vivienda", string.IsNullOrEmpty(ddlClasificacionVivienda.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlClasificacionVivienda.SelectedValue));
+                            cmd.Parameters.AddWithValue("p_man_id", string.IsNullOrEmpty(ddlManzana.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlManzana.SelectedValue));
+
+                            cmd.ExecuteNonQuery();
+                        }
                     }
                 }
-                else
-                {
-                    using (var cmd = new NpgsqlCommand("catastro.insertar_predio", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("p_pre_codigo_catastral", txtCodigo.Text.Trim());
-                        cmd.Parameters.AddWithValue("p_pre_nombre_predio", txtNombre.Text.Trim());
-                        cmd.Parameters.AddWithValue("p_pre_dominio", string.IsNullOrEmpty(ddlDominio.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlDominio.SelectedValue));
-                        cmd.Parameters.AddWithValue("p_opc_condicion_ocupacion", string.IsNullOrEmpty(ddlCondicionOcupacion.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlCondicionOcupacion.SelectedValue));
-                        cmd.Parameters.AddWithValue("p_opc_clasificacion_vivienda", string.IsNullOrEmpty(ddlClasificacionVivienda.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlClasificacionVivienda.SelectedValue));
-                        cmd.Parameters.AddWithValue("p_man_id", string.IsNullOrEmpty(ddlManzana.SelectedValue) ? (object)DBNull.Value : Convert.ToInt32(ddlManzana.SelectedValue));
 
-                        cmd.ExecuteNonQuery();
-                    }
-                }
+                // Mostrar notificación de éxito y redirigir
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", @"
+            mostrarMensaje('success', 'Predio guardado exitosamente');
+            setTimeout(function() { window.location.href = 'Predio.aspx'; }, 2000);
+        ", true);
             }
-
-            Response.Redirect("Predio.aspx");
+            catch (Exception ex)
+            {
+                // Mostrar notificación de error
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", $@"
+            mostrarMensaje('error', 'Error al guardar: {ex.Message.Replace("'", "\\'")}');
+        ", true);
+            }
         }
+
 
         private void EliminarPredio(int id)
         {
@@ -191,5 +206,35 @@ namespace WebHB_BG
                 }
             }
         }
+
+        protected void gvPredios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Eliminar")
+            {
+                int idPredio = Convert.ToInt32(e.CommandArgument);
+
+                try
+                {
+                    EliminarPredio(idPredio);
+                    CargarPredios(); // recarga la grilla
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "msg",
+                        "mostrarMensaje('success', 'Predio eliminado correctamente');", true);
+                }
+                catch (Npgsql.PostgresException ex) when (ex.SqlState == "23503")
+                {
+                    // Violación de FK: no se puede eliminar
+                    ScriptManager.RegisterStartupScript(this, GetType(), "msg",
+                        "mostrarMensaje('error', 'No se puede eliminar el predio porque está referenciado por otros registros.');", true);
+                }
+                catch (Exception ex)
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "msg",
+                        $"mostrarMensaje('error', 'Error al eliminar: {ex.Message.Replace("'", "\\'")}');", true);
+                }
+            }
+        }
+
+
     }
 }
