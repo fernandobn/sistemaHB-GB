@@ -72,8 +72,6 @@
                         <a href="Predio.aspx" class="nav-item nav-link">Predio</a>
                         <a href="PropietarioPredio.aspx" class="nav-item nav-link">Propietario Predio</a>
                         <a href="Propietario.aspx" class="nav-item nav-link">Propietario</a>
-                        
-
                     </div>
                 </div>
             </nav>
