@@ -16,7 +16,8 @@ obj/
 
 # Archivos de depuración
 *.pdb
-*.dll
+# NO ignores *.dll para que se suban los ensamblados de NuGet
+# *.dll
 
 # Configuraciones de usuario
 *.dbmdl
@@ -25,8 +26,8 @@ obj/
 # VS Code settings (opcional)
 .vscode/
 
-# Carpeta de paquetes NuGet (para projects con packages.config)
-packages/
+# NO ignores la carpeta packages para que se suba todo lo que instalas con NuGet
+# packages/
 
 # Archivos NuGet propios
 *.nupkg

@@ -147,43 +147,7 @@
             });
         }
     </script>
-    <script>
-        function validarFormularioPredio() {
-            let errores = [];
-
-            if ($("#<%= txtCodigo.ClientID %>").val().trim() === "")
-                errores.push("Debe ingresar el Código Catastral.");
-            if ($("#<%= txtNombre.ClientID %>").val().trim() === "")
-                errores.push("Debe ingresar el Nombre del Predio.");
-            if ($("#<%= ddlDominio.ClientID %>").val() === "")
-                errores.push("Debe seleccionar el Dominio.");
-            if ($("#<%= ddlCondicionOcupacion.ClientID %>").val() === "")
-                errores.push("Debe seleccionar la Condición de Ocupación.");
-            if ($("#<%= ddlClasificacionVivienda.ClientID %>").val() === "")
-                errores.push("Debe seleccionar la Clasificación de Vivienda.");
-            if ($("#<%= ddlManzana.ClientID %>").val() === "")
-                errores.push("Debe seleccionar una Manzana.");
-
-            if (errores.length > 0) {
-                errores.forEach(function (mensaje) {
-                    iziToast.error({
-                        title: 'Error',
-                        message: mensaje,
-                        position: 'topRight'
-                    });
-                });
-                return false; // Evita el postback si hay errores
-            }
-
-            return true; // Permite el postback si no hay errores
-        }
-
-        $(document).ready(function () {
-            $("#<%= btnGuardar.ClientID %>").click(function () {
-                return validarFormularioPredio();
-            });
-        });
-    </script>
+    
     <script>
         function confirmarEliminacionPredio(event, id) {
             event.preventDefault();
