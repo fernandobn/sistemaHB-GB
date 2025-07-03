@@ -14,11 +14,10 @@ namespace WebHB_BG
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Aquí debes conectar a tu base de datos y obtener los resultados de las consultas
+        
             parroquias = new List<string>();
             prediosPorParroquia = new List<int>();
 
-            // Consulta 1: Predios por Parroquia
             string connectionString = "Host=localhost;Port=5432;Database=minicipio;Username=postgres;Password=F3rtipan77;Pooling=true;SSL Mode=Prefer;";
             string queryParroquias = @"
                 SELECT pr.par_nombre, COUNT(vp.pre_id) AS total_predios
@@ -42,7 +41,7 @@ namespace WebHB_BG
             propietarios = new List<string>();
             prediosPorPropietario = new List<int>();
 
-            // Consulta 2: Propietarios con más predios
+
             string queryPropietarios = @"
                 SELECT 
                     CONCAT(gp.pro_nombre, ' ', gp.pro_apellido) AS nombre_completo,
