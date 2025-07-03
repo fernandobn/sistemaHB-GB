@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\",
+  "WorkspaceRootPath": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\guayt\\documents\\web\\asp\\hg1\\sistemahb-gb\\webhb-bg\\webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|d:\\octavo\\02_inteligencia de negocios bi\\proyecto\\sistemahb-gb\\webhb-bg\\webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\guayt\\documents\\web\\asp\\hg1\\sistemahb-gb\\webhb-bg\\webhb-bg\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\guayt\\documents\\web\\asp\\hg1\\sistemahb-gb\\webhb-bg\\webhb-bg\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\guayt\\documents\\web\\asp\\hg1\\sistemahb-gb\\webhb-bg\\webhb-bg\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|c:\\users\\guayt\\documents\\web\\asp\\hg1\\sistemahb-gb\\webhb-bg\\webhb-bg\\propietariopredio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\webhb-bg\\propietariopredio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{EFEC76AD-2BAD-4168-8213-120627EC4BB9}|WebHB-BG\\WebHB-BG.csproj|solutionrelative:webhb-bg\\propietariopredio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -30,15 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Site.Master",
+              "DocumentMoniker": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Site.Master",
               "RelativeDocumentMoniker": "WebHB-BG\\Site.Master",
-              "ToolTip": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Site.Master",
+              "ToolTip": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Site.Master",
               "RelativeToolTip": "WebHB-BG\\Site.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -49,35 +53,33 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "dashboard.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx.cs",
+              "DocumentMoniker": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx.cs",
               "RelativeDocumentMoniker": "WebHB-BG\\dashboard.aspx.cs",
-              "ToolTip": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx.cs",
+              "ToolTip": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx.cs",
               "RelativeToolTip": "WebHB-BG\\dashboard.aspx.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAowAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T04:56:02.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T04:56:02.71Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "dashboard.aspx",
-              "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx",
+              "DocumentMoniker": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx",
               "RelativeDocumentMoniker": "WebHB-BG\\dashboard.aspx",
-              "ToolTip": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx",
+              "ToolTip": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\dashboard.aspx",
               "RelativeToolTip": "WebHB-BG\\dashboard.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-03T04:55:46.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T04:55:46.817Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Web.config",
+              "DocumentMoniker": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Web.config",
               "RelativeDocumentMoniker": "WebHB-BG\\Web.config",
-              "ToolTip": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Web.config",
+              "ToolTip": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\Web.config",
               "RelativeToolTip": "WebHB-BG\\Web.config",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -88,14 +90,31 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "PropietarioPredio.aspx",
-              "DocumentMoniker": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx",
+              "DocumentMoniker": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx",
               "RelativeDocumentMoniker": "WebHB-BG\\PropietarioPredio.aspx",
-              "ToolTip": "C:\\Users\\guayt\\Documents\\web\\ASP\\hg1\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx",
+              "ToolTip": "D:\\Octavo\\02_Inteligencia de Negocios BI\\proyecto\\sistemaHB-GB\\WebHB-BG\\WebHB-BG\\PropietarioPredio.aspx",
               "RelativeToolTip": "WebHB-BG\\PropietarioPredio.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-03T04:51:31.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T04:51:31.591Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 816,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }
