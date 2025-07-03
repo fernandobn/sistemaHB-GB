@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Predio.aspx.cs" Inherits="WebHB_BG.Predio" EnableEventValidation="false" %>
-
 <%@ Import Namespace="System.Data" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -23,10 +22,11 @@
 
             <asp:Panel ID="pnlFormulario" runat="server">
                 <div class="row g-3">
-                    <!-- COLUMNA 1 - Información Básica -->
-                    <div class="col-md-6">
+                    <!-- PRIMERA FILA - 3 columnas -->
+                    <div class="col-md-4">
                         <asp:HiddenField ID="hdnPreId" runat="server" />
                         
+                        <!-- Grupo 1: Identificación básica -->
                         <div class="form-group">
                             <label>Código Catastral *</label>
                             <asp:TextBox ID="txtCodigoCatastral" runat="server" CssClass="form-control" MaxLength="50" required="true" />
@@ -51,7 +51,10 @@
                             <label>Nombre Predio *</label>
                             <asp:TextBox ID="txtNombrePredio" runat="server" CssClass="form-control" MaxLength="100" required="true" />
                         </div>
-                        
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Grupo 2: Dimensiones -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -68,28 +71,18 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Observaciones</label>
-                            <asp:TextBox ID="txtObservaciones" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="2" MaxLength="500" />
+                            <label>Fondo Relativo</label>
+                            <asp:TextBox ID="txtFondoRelativo" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Frente Fondo</label>
+                            <asp:TextBox ID="txtFrenteFondo" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
                         </div>
                         
                         <div class="form-group">
-                            <label>Dimensión Tomada de Planos</label>
-                            <asp:TextBox ID="txtDimTomadoPlanos" runat="server" CssClass="form-control" MaxLength="100" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Otra Fuente de Información</label>
-                            <asp:TextBox ID="txtOtraFuenteInfo" runat="server" CssClass="form-control" MaxLength="100" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Número Nuevo Bloque</label>
-                            <asp:TextBox ID="txtNumNuevoBloque" runat="server" CssClass="form-control" MaxLength="20" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Número Ampliación Bloque</label>
-                            <asp:TextBox ID="txtNumAmpliBloque" runat="server" CssClass="form-control" TextMode="Number" />
+                            <label>Propiedad Horizontal</label>
+                            <asp:TextBox ID="txtPropiedadHorizontal" runat="server" CssClass="form-control" MaxLength="50" />
                         </div>
                         
                         <div class="form-group">
@@ -100,27 +93,10 @@
                                 <asp:ListItem Text="Tipo 2" Value="2" />
                             </asp:DropDownList>
                         </div>
-                        
-                        <div class="form-group">
-                            <label>Propiedad Horizontal</label>
-                            <asp:TextBox ID="txtPropiedadHorizontal" runat="server" CssClass="form-control" MaxLength="50" />
-                        </div>
-                        <div class="form-group">
-
-                        <div class="form-group">
-                            <label>Fondo Relativo</label>
-                            <asp:TextBox ID="txtFondoRelativo" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Frente Fondo</label>
-                            <asp:TextBox ID="txtFrenteFondo" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
-                        </div>
-
                     </div>
 
-                    <!-- COLUMNA 2 - Información Adicional -->
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <!-- Grupo 3: Estado y dominio -->
                         <div class="form-group">
                             <label>Estado *</label>
                             <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control select2" required="true">
@@ -138,11 +114,6 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Geometría (WKT)</label>
-                            <asp:TextBox ID="txtGeometria" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3" />
-                        </div>
-                        
-                        <div class="form-group">
                             <label>Condición Ocupación</label>
                             <asp:DropDownList ID="ddlCondicionOcupacion" runat="server" CssClass="form-control select2" AppendDataBoundItems="true">
                                 <asp:ListItem Text="Seleccione Condición Ocupación" Value="" />
@@ -150,45 +121,10 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Número de Habitantes</label>
-                            <asp:TextBox ID="txtNumHabitantes" runat="server" CssClass="form-control" TextMode="Number" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Propietario Anterior</label>
-                            <asp:TextBox ID="txtPropietarioAnterior" runat="server" CssClass="form-control" MaxLength="100" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Carta Topográfica</label>
-                            <asp:TextBox ID="txtCartaTopografica" runat="server" CssClass="form-control" MaxLength="100" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Foto Aérea</label>
-                            <asp:TextBox ID="txtFotoAerea" runat="server" CssClass="form-control" MaxLength="100" />
-                        </div>
-                        
-                        <div class="form-group">
                             <label>Manzana</label>
                             <asp:DropDownList ID="ddlManzana" runat="server" CssClass="form-control select2" AppendDataBoundItems="true">
                                 <asp:ListItem Text="Seleccione Manzana" Value="" />
                             </asp:DropDownList>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Número de Familias</label>
-                            <asp:TextBox ID="txtNumFamilias" runat="server" CssClass="form-control" TextMode="Number" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Porcentaje Dominio (%)</label>
-                            <asp:TextBox ID="txtPorcentajeDominio" runat="server" CssClass="form-control" TextMode="Number" step="0.01" min="0" max="100" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Detalle Dominio</label>
-                            <asp:TextBox ID="txtDetalleDominio" runat="server" CssClass="form-control" MaxLength="200" />
                         </div>
                         
                         <div class="form-group">
@@ -202,12 +138,130 @@
                     </div>
                 </div>
 
-                <!-- Segunda Fila - Más campos -->
+                <!-- SEGUNDA FILA - 3 columnas -->
                 <div class="row g-3 mt-3">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <!-- Grupo 4: Documentación -->
+                        <div class="form-group">
+                            <label>Dimensión Tomada de Planos</label>
+                            <asp:TextBox ID="txtDimTomadoPlanos" runat="server" CssClass="form-control" MaxLength="100" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Otra Fuente de Información</label>
+                            <asp:TextBox ID="txtOtraFuenteInfo" runat="server" CssClass="form-control" MaxLength="100" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Carta Topográfica</label>
+                            <asp:TextBox ID="txtCartaTopografica" runat="server" CssClass="form-control" MaxLength="100" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Foto Aérea</label>
+                            <asp:TextBox ID="txtFotoAerea" runat="server" CssClass="form-control" MaxLength="100" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Número Nuevo Bloque</label>
+                            <asp:TextBox ID="txtNumNuevoBloque" runat="server" CssClass="form-control" MaxLength="20" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Grupo 5: Población -->
+                        <div class="form-group">
+                            <label>Número de Habitantes</label>
+                            <asp:TextBox ID="txtNumHabitantes" runat="server" CssClass="form-control" TextMode="Number" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Número de Familias</label>
+                            <asp:TextBox ID="txtNumFamilias" runat="server" CssClass="form-control" TextMode="Number" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Número de Celulares</label>
+                            <asp:TextBox ID="txtNumCelulares" runat="server" CssClass="form-control" TextMode="Number" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Propietario Anterior</label>
+                            <asp:TextBox ID="txtPropietarioAnterior" runat="server" CssClass="form-control" MaxLength="100" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Número Ampliación Bloque</label>
+                            <asp:TextBox ID="txtNumAmpliBloque" runat="server" CssClass="form-control" TextMode="Number" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Grupo 6: Dominio y ubicación -->
+                        <div class="form-group">
+                            <label>Porcentaje Dominio (%)</label>
+                            <asp:TextBox ID="txtPorcentajeDominio" runat="server" CssClass="form-control" TextMode="Number" step="0.01" min="0" max="100" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Detalle Dominio</label>
+                            <asp:TextBox ID="txtDetalleDominio" runat="server" CssClass="form-control" MaxLength="200" />
+                        </div>
+                        
                         <div class="form-group">
                             <label>Valor Tipo Mixto</label>
                             <asp:TextBox ID="txtValorTipoMixto" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Dirección Principal *</label>
+                            <asp:TextBox ID="txtDireccionPrincipal" runat="server" CssClass="form-control" MaxLength="200" required="true" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Localización Otros</label>
+                            <asp:TextBox ID="txtLocalizacionOtros" runat="server" CssClass="form-control" MaxLength="200" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TERCERA FILA - 3 columnas -->
+                <div class="row g-3 mt-3">
+                    <div class="col-md-4">
+                        <!-- Grupo 7: Áreas adicionales -->
+                        <div class="form-group">
+                            <label>Área Terreno Anterior (m²)</label>
+                            <asp:TextBox ID="txtAreaTotalTerrenoAnterior" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Área Terreno Gráfico (m²)</label>
+                            <asp:TextBox ID="txtAreaTotalTerGrafico" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Área Terreno Alfanumérico (m²)</label>
+                            <asp:TextBox ID="txtAreaTotalTerAlfanumerico" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Área Construcción Alfanumérico (m²)</label>
+                            <asp:TextBox ID="txtAreaTotalConstAlfanumerico" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Grupo 8: Vivienda y estado -->
+                        <div class="form-group">
+                            <label>Tipo Vivienda</label>
+                            <asp:TextBox ID="txtTipoVivienda" runat="server" CssClass="form-control" MaxLength="50" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Clasificación Vivienda</label>
+                            <asp:DropDownList ID="ddlClasificacionVivienda" runat="server" CssClass="form-control select2" AppendDataBoundItems="true">
+                                <asp:ListItem Text="Seleccione Clasificación Vivienda" Value="" />
+                            </asp:DropDownList>
                         </div>
                         
                         <div class="form-group">
@@ -220,21 +274,23 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Área Terreno Anterior (m²)</label>
-                            <asp:TextBox ID="txtAreaTotalTerrenoAnterior" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Localización Otros</label>
-                            <asp:TextBox ID="txtLocalizacionOtros" runat="server" CssClass="form-control" MaxLength="200" />
-                        </div>
-                        
-                        <div class="form-group">
                             <label>Bien Mostrenco</label>
                             <asp:DropDownList ID="ddlBienMostrenco" runat="server" CssClass="form-control select2">
                                 <asp:ListItem Text="Seleccione" Value="" />
                                 <asp:ListItem Text="Sí" Value="1" />
                                 <asp:ListItem Text="No" Value="0" />
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Grupo 9: Propiedad horizontal -->
+                        <div class="form-group">
+                            <label>Dominio Detalle</label>
+                            <asp:DropDownList ID="ddlDominioDetalle" runat="server" CssClass="form-control select2">
+                                <asp:ListItem Text="Seleccione" Value="" />
+                                <asp:ListItem Text="Opción 1" Value="1" />
+                                <asp:ListItem Text="Opción 2" Value="2" />
                             </asp:DropDownList>
                         </div>
                         
@@ -248,13 +304,6 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Área Terreno Gráfico (m²)</label>
-                            <asp:TextBox ID="txtAreaTotalTerGrafico" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <div class="form-group">
                             <label>Propietario Desconocido</label>
                             <asp:DropDownList ID="ddlPropietarioDesconocido" runat="server" CssClass="form-control select2">
                                 <asp:ListItem Text="Seleccione" Value="" />
@@ -264,56 +313,16 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Área Terreno Alfanumérico (m²)</label>
-                            <asp:TextBox ID="txtAreaTotalTerAlfanumerico" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Dominio Detalle</label>
-                            <asp:DropDownList ID="ddlDominioDetalle" runat="server" CssClass="form-control select2">
-                                <asp:ListItem Text="Seleccione" Value="" />
-                                <asp:ListItem Text="Opción 1" Value="1" />
-                                <asp:ListItem Text="Opción 2" Value="2" />
-                            </asp:DropDownList>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Dirección Principal *</label>
-                            <asp:TextBox ID="txtDireccionPrincipal" runat="server" CssClass="form-control" MaxLength="200" required="true" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Área Construcción Alfanumérico (m²)</label>
-                            <asp:TextBox ID="txtAreaTotalConstAlfanumerico" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Tipo Vivienda</label>
-                            <asp:TextBox ID="txtTipoVivienda" runat="server" CssClass="form-control" MaxLength="50" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Clasificación Vivienda</label>
-                            <asp:DropDownList ID="ddlClasificacionVivienda" runat="server" CssClass="form-control select2" AppendDataBoundItems="true">
-                                <asp:ListItem Text="Seleccione Clasificación Vivienda" Value="" />
-                            </asp:DropDownList>
+                            <label>Fecha Modificación</label>
+                            <asp:TextBox ID="txtFechaModificacion" runat="server" CssClass="form-control" TextMode="DateTimeLocal" Enabled="false" />
                         </div>
                     </div>
                 </div>
 
-                <!-- Tercera Fila - Campos adicionales -->
+                <!-- CUARTA FILA - 3 columnas -->
                 <div class="row g-3 mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Fecha Modificación</label>
-                            <asp:TextBox ID="txtFechaModificacion" runat="server" CssClass="form-control" TextMode="DateTimeLocal" Enabled="false" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Número de Celulares</label>
-                            <asp:TextBox ID="txtNumCelulares" runat="server" CssClass="form-control" TextMode="Number" />
-                        </div>
-                        
+                    <div class="col-md-4">
+                        <!-- Grupo 10: PH - Parte 1 -->
                         <div class="form-group">
                             <label>Modalidad Propiedad Horizontal</label>
                             <asp:DropDownList ID="ddlModalidadPropiedadHorizontal" runat="server" CssClass="form-control select2">
@@ -328,8 +337,9 @@
                             <asp:TextBox ID="txtAlicuotaTotalDeclaratoria" runat="server" CssClass="form-control" TextMode="Number" step="0.0001" min="0" max="100" />
                         </div>
                     </div>
-                    
-                    <div class="col-md-6">
+
+                    <div class="col-md-4">
+                        <!-- Grupo 11: PH - Parte 2 -->
                         <div class="form-group">
                             <label>Tipo Propiedad Horizontal</label>
                             <asp:DropDownList ID="ddlTipoPropiedadHorizontal" runat="server" CssClass="form-control select2">
@@ -340,11 +350,6 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Observación PH</label>
-                            <asp:TextBox ID="txtObservacionPH" runat="server" CssClass="form-control" MaxLength="500" TextMode="MultiLine" Rows="2" />
-                        </div>
-                        
-                        <div class="form-group">
                             <label>Hipoteca GAD</label>
                             <asp:DropDownList ID="ddlHipotecaGAD" runat="server" CssClass="form-control select2">
                                 <asp:ListItem Text="Seleccione" Value="" />
@@ -352,7 +357,10 @@
                                 <asp:ListItem Text="No" Value="0" />
                             </asp:DropDownList>
                         </div>
-                        
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Grupo 12: PH - Parte 3 -->
                         <div class="form-group">
                             <label>Régimen Propiedad Horizontal</label>
                             <asp:DropDownList ID="ddlRegimenPropiedadHorizontal" runat="server" CssClass="form-control select2">
@@ -369,6 +377,33 @@
                                 <asp:ListItem Text="Sí" Value="1" />
                                 <asp:ListItem Text="No" Value="0" />
                             </asp:DropDownList>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUINTA FILA - Observaciones y geometría -->
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Observaciones</label>
+                            <asp:TextBox ID="txtObservaciones" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="2" MaxLength="500" />
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Observación PH</label>
+                            <asp:TextBox ID="txtObservacionPH" runat="server" CssClass="form-control" MaxLength="500" TextMode="MultiLine" Rows="2" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEXTA FILA - Geometría -->
+                <div class="row g-3 mt-3">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Geometría (WKT)</label>
+                            <asp:TextBox ID="txtGeometria" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3" />
                         </div>
                     </div>
                 </div>
