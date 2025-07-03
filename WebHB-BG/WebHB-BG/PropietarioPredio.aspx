@@ -7,12 +7,11 @@
                 <h1 class="display-4 text-white animated zoomIn">Guardar Propietario</h1>
                 <a href="/" class="h5 text-white">Inicio</a>
                 <i class="far fa-circle text-white px-2"></i>
-                <a href="#" class="h5 text-white">Catálogo</a>
+                <a href="#" class="h5 text-white">Propietario Predio</a>
             </div>
         </div>
     </div>
-
-    <div class="container-fluid py-5">
+    <div>
         <div class="container py-5">
             <div class="section-title text-center pb-3 mb-5 mx-auto" style="max-width: 600px">
                 <h5 class="fw-bold text-primary text-uppercase">Gestión de Propietarios</h5>
@@ -20,19 +19,34 @@
             </div>
 
             <asp:Panel ID="pnlFormulario" runat="server" CssClass="bg-light shadow rounded p-4">
-                <!-- HiddenFields -->
-                <asp:HiddenField ID="hfPrpId" runat="server" />
-                <asp:HiddenField ID="hfProId" runat="server" />
-                <asp:HiddenField ID="hfProIdConyuge" runat="server" />
-                <asp:HiddenField ID="hfProIdRepLegal" runat="server" />
-                <asp:HiddenField ID="hfPreId" runat="server" />
+                <asp:HiddenField ID="hfPropietarioPredioID" runat="server" />
 
                 <div class="row g-4">
                     <!-- Columna Izquierda -->
                     <div class="col-md-6">
                         <div class="mb-3">
+                            <label class="form-label">Propietario</label>
+                            <asp:DropDownList ID="ddlPropietario" runat="server" CssClass="form-select select2" AppendDataBoundItems="true" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Cónyuge</label>
+                            <asp:DropDownList ID="ddlConyuge" runat="server" CssClass="form-select select2" AppendDataBoundItems="true" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Representante Legal</label>
+                            <asp:DropDownList ID="ddlRepresentanteLegal" runat="server" CssClass="form-select select2" AppendDataBoundItems="true" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Predio</label>
+                            <asp:DropDownList ID="ddlPredio" runat="server" CssClass="form-select select2" AppendDataBoundItems="true" />
+                        </div>
+
+                        <div class="mb-3">
                             <label class="form-label">Alicuota</label>
-                            <asp:TextBox ID="txtAlicuota" runat="server" CssClass="form-control" TextMode="Number" />
+                            <asp:TextBox ID="txtAlicuota" runat="server" CssClass="form-control" TextMode="Number" step="0.01" />
                         </div>
 
                         <div class="mb-3">
@@ -45,32 +59,36 @@
                             <asp:TextBox ID="txtObservacion" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3" />
                         </div>
 
-                        <div class="form-check mb-3">
-                            <asp:CheckBox ID="chkTieneEscritura" runat="server" CssClass="form-check-input" />
-                            <label class="form-check-label" for="chkTieneEscritura">Tiene Escritura</label>
+                        <div class="mb-3">
+                            <label class="form-label">Tiene Escritura</label>
+                            <asp:DropDownList ID="ddlTieneEscritura" runat="server" CssClass="form-select">
+                                <asp:ListItem Value="" Text="-- Seleccionar --" />
+                                <asp:ListItem Value="1" Text="Sí" />
+                                <asp:ListItem Value="0" Text="No" />
+                            </asp:DropDownList>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Representante</label>
-                            <asp:TextBox ID="txtRepresentante" runat="server" CssClass="form-control" />
+                            <asp:DropDownList ID="ddlRepresentante" runat="server" CssClass="form-select">
+                                <asp:ListItem Value="" Text="-- Seleccionar --" />
+                                <asp:ListItem Value="1" Text="Sí" />
+                                <asp:ListItem Value="0" Text="No" />
+                            </asp:DropDownList>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Tipo Adquisición</label>
-                            <asp:DropDownList ID="ddlAdquisicion" runat="server" CssClass="form-select select2" AppendDataBoundItems="true">
-                                <asp:ListItem Text="Seleccione" Value="" />
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlAdquisicion" runat="server" CssClass="form-select select2" AppendDataBoundItems="true" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Situación Actual</label>
-                            <asp:DropDownList ID="ddlSituacionActual" runat="server" CssClass="form-select select2" AppendDataBoundItems="true">
-                                <asp:ListItem Text="Seleccione" Value="" />
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlSituacionActual" runat="server" CssClass="form-select select2" AppendDataBoundItems="true" />
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Celebrado ante</label>
+                            <label class="form-label">Celebrado Ante</label>
                             <asp:TextBox ID="txtCelebradoAnte" runat="server" CssClass="form-control" />
                         </div>
                     </div>
@@ -99,7 +117,11 @@
 
                         <div class="mb-3">
                             <label class="form-label">Perfeccionamiento</label>
-                            <asp:TextBox ID="txtPerfeccionamiento" runat="server" CssClass="form-control" />
+                            <asp:DropDownList ID="ddlPerfeccionamiento" runat="server" CssClass="form-select">
+                                <asp:ListItem Value="" Text="-- Seleccionar --" />
+                                <asp:ListItem Value="1" Text="Sí" />
+                                <asp:ListItem Value="0" Text="No" />
+                            </asp:DropDownList>
                         </div>
 
                         <div class="mb-3">
@@ -132,9 +154,13 @@
                             <asp:TextBox ID="txtSituacionLegal" runat="server" CssClass="form-control" />
                         </div>
 
-                        <div class="form-check mb-3">
-                            <asp:CheckBox ID="chkFinanciado" runat="server" CssClass="form-check-input" />
-                            <label class="form-check-label" for="chkFinanciado">¿Está Financiado?</label>
+                        <div class="mb-3">
+                            <label class="form-label">¿Está Financiado?</label>
+                            <asp:DropDownList ID="ddlFinanciado" runat="server" CssClass="form-select">
+                                <asp:ListItem Value="" Text="-- Seleccionar --" />
+                                <asp:ListItem Value="1" Text="Sí" />
+                                <asp:ListItem Value="0" Text="No" />
+                            </asp:DropDownList>
                         </div>
 
                         <div class="mb-3">
@@ -149,39 +175,55 @@
 
                         <div class="mb-3">
                             <label class="form-label">Área de Escritura (m²)</label>
-                            <asp:TextBox ID="txtAreaEscritura" runat="server" CssClass="form-control" TextMode="Number" />
+                            <asp:TextBox ID="txtAreaEscritura" runat="server" CssClass="form-control" TextMode="Number" step="0.01" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Parentesco</label>
-                            <asp:DropDownList ID="ddlParentesco" runat="server" CssClass="form-select select2" AppendDataBoundItems="true">
-                                <asp:ListItem Text="Seleccione" Value="" />
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlParentesco" runat="server" CssClass="form-select select2" AppendDataBoundItems="true" />
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mt-5">
-                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary btn-lg rounded" />
-                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-warning btn-lg rounded ms-3" Visible="false" />
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary btn-lg rounded" OnClick="btnGuardar_Click" />
+                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-warning btn-lg rounded ms-3" Visible="false" OnClick="btnActualizar_Click" />
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary btn-lg rounded ms-3" OnClick="btnCancelar_Click" />
                 </div>
             </asp:Panel>
-            <asp:GridView ID="gvPredios" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="10"
-    OnPageIndexChanging="gvPredios_PageIndexChanging" CssClass="table table-striped">
-    <Columns>
-        <asp:BoundField DataField="pre_codigo_catastral" HeaderText="Código Catastral" />
-        <asp:BoundField DataField="pre_nombre_predio" HeaderText="Nombre del Predio" />
-        <asp:BoundField DataField="pre_dominio_nombre" HeaderText="Dominio" />
-        <asp:BoundField DataField="condicion_ocupacion" HeaderText="Condición Ocupación" />
-        <asp:BoundField DataField="clasificacion_vivienda" HeaderText="Clasificación Vivienda" />
-        <asp:BoundField DataField="manzana_nombre" HeaderText="Manzana" />
-        <asp:TemplateField HeaderText="Acciones">
-            <ItemTemplate>
-                <a href='Predio.aspx?edit=<%# Eval("pre_id") %>' class="btn btn-primary btn-sm">Editar</a>
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Columns>
-</asp:GridView>
+
+            <asp:GridView ID="gvPropietariosPredio" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="20"
+                OnPageIndexChanging="gvPropietariosPredio_PageIndexChanging" OnRowCommand="gvPropietariosPredio_RowCommand" CssClass="table table-striped mt-5">
+                <Columns>
+                    <asp:BoundField DataField="prp_id" HeaderText="ID" ReadOnly="true" />
+                    <asp:BoundField DataField="propietario" HeaderText="Propietario" />
+                    <asp:BoundField DataField="pro_num_identificacion" HeaderText="Identificación" />
+                    <asp:BoundField DataField="predio_info" HeaderText="Predio" />
+                    <asp:BoundField DataField="prp_alicuota" HeaderText="Alicuota" DataFormatString="{0:N2}" />
+                    <asp:BoundField DataField="prp_anios_posesion" HeaderText="Años Posesión" />
+                    <asp:BoundField DataField="tiene_escritura" HeaderText="Tiene Escritura" />
+                    <asp:BoundField DataField="tipo_propietario" HeaderText="Tipo" />
+                    <asp:TemplateField HeaderText="Acciones">
+                        <ItemTemplate>
+                            <asp:Button 
+                                ID="btnEditar" 
+                                runat="server" 
+                                CommandName="Editar" 
+                                CommandArgument='<%# Eval("prp_id") %>' 
+                                Text="Editar" 
+                                CssClass="btn btn-primary btn-sm" />
+                            <asp:Button 
+                                ID="btnEliminar" 
+                                runat="server" 
+                                CommandName="Eliminar" 
+                                CommandArgument='<%# Eval("prp_id") %>' 
+                                Text="Eliminar" 
+                                CssClass="btn btn-danger btn-sm ms-2"
+                                OnClientClick='<%# "return confirmarEliminacion(event, \"" + Eval("prp_id") + "\");" %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
 
         </div>
     </div>
@@ -206,6 +248,11 @@
 
         function validarFormulario() {
             let errores = [];
+
+            if ($("#<%= ddlPropietario.ClientID %>").val() === "")
+                errores.push("Debe seleccionar un propietario.");
+            if ($("#<%= ddlPredio.ClientID %>").val() === "")
+                errores.push("Debe seleccionar un predio.");
             if ($("#<%= ddlAdquisicion.ClientID %>").val() === "")
                 errores.push("Debe seleccionar el tipo de adquisición.");
             if ($("#<%= ddlSituacionActual.ClientID %>").val() === "")
@@ -238,7 +285,7 @@
                 position: 'center',
                 buttons: [
                     ['<button><b>SÍ</b></button>', function (instance, toast) {
-                        __doPostBack('<%= pnlFormulario.UniqueID %>', 'Eliminar$' + id);
+                        __doPostBack('<%= gvPropietariosPredio.UniqueID %>', 'Eliminar$' + id);
                         instance.hide({}, toast, 'button');
                     }],
                     ['<button>NO</button>', function (instance, toast) {
@@ -247,6 +294,22 @@
                 ]
             });
             return false;
+        }
+
+        function mostrarMensaje(tipo, mensaje) {
+            if (tipo === 'success') {
+                iziToast.success({
+                    title: 'Éxito',
+                    message: mensaje,
+                    position: 'topRight'
+                });
+            } else if (tipo === 'error') {
+                iziToast.error({
+                    title: 'Error',
+                    message: mensaje,
+                    position: 'topRight'
+                });
+            }
         }
     </script>
 </asp:Content>

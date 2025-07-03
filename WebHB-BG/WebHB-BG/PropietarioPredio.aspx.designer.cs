@@ -24,49 +24,49 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.Panel pnlFormulario;
 
         /// <summary>
-        /// Control hfPrpId.
+        /// Control hfPropietarioPredioID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfPrpId;
+        protected global::System.Web.UI.WebControls.HiddenField hfPropietarioPredioID;
 
         /// <summary>
-        /// Control hfProId.
+        /// Control ddlPropietario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfProId;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPropietario;
 
         /// <summary>
-        /// Control hfProIdConyuge.
+        /// Control ddlConyuge.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfProIdConyuge;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConyuge;
 
         /// <summary>
-        /// Control hfProIdRepLegal.
+        /// Control ddlRepresentanteLegal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfProIdRepLegal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRepresentanteLegal;
 
         /// <summary>
-        /// Control hfPreId.
+        /// Control ddlPredio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfPreId;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPredio;
 
         /// <summary>
         /// Control txtAlicuota.
@@ -96,22 +96,22 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtObservacion;
 
         /// <summary>
-        /// Control chkTieneEscritura.
+        /// Control ddlTieneEscritura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkTieneEscritura;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTieneEscritura;
 
         /// <summary>
-        /// Control txtRepresentante.
+        /// Control ddlRepresentante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRepresentante;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRepresentante;
 
         /// <summary>
         /// Control ddlAdquisicion.
@@ -177,13 +177,13 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtLugarInscripcion;
 
         /// <summary>
-        /// Control txtPerfeccionamiento.
+        /// Control ddlPerfeccionamiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPerfeccionamiento;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPerfeccionamiento;
 
         /// <summary>
         /// Control txtLugarRegistro.
@@ -240,13 +240,13 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtSituacionLegal;
 
         /// <summary>
-        /// Control chkFinanciado.
+        /// Control ddlFinanciado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkFinanciado;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFinanciado;
 
         /// <summary>
         /// Control txtNombrePueblo.
@@ -303,12 +303,21 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.Button btnActualizar;
 
         /// <summary>
-        /// Control gvPredios.
+        /// Control btnCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPredios;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
+
+        /// <summary>
+        /// Control gvPropietariosPredio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvPropietariosPredio;
     }
 }
