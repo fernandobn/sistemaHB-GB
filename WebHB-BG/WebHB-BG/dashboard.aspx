@@ -1,30 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="WebHB_BG.dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+<br /><br />
+<div class="container py-6">
     <h2>Dashboard</h2>
 
     <!-- Contenedor con fila para gráficos -->
     <div class="row">
-        <!-- Card para el gráfico de barras (Predios por Parroquia) -->
-        <div class="col-md-6">
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-body">
-                    <h5 class="card-title">Predios por Parroquia</h5>
-                    <canvas id="barChart" width="300" height="200"></canvas> <!-- Ajustado tamaño -->
+        <!-- Card para el gráfico de barras -->
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0 rounded-4 mb-4" style="background-color: #f8f9fa;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold mb-3" style="color: #343a40;">Predios por Parroquia</h5>
+                    <canvas id="barChart" width="0" height="200"></canvas>
                 </div>
             </div>
         </div>
 
-        <!-- Card para el gráfico de pastel (TOP 5 Propietarios con más Predios) -->
-        <div class="col-md-6">
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-body">
-                    <h5 class="card-title">Top 5 Propietarios con Más Predios</h5>
-                    <canvas id="pieChart" width="300" height="200"></canvas> <!-- Ajustado tamaño -->
+        <!-- Card para el gráfico de pastel -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 rounded-4 mb-4" style="background-color: #f8f9fa;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold mb-3" style="color: #343a40;">Top 5 Propietarios con Más Predios</h5>
+                    <canvas id="pieChart" width="100" height="100"></canvas>
                 </div>
             </div>
         </div>
     </div>
 
+</div>
 
 
     <script>
