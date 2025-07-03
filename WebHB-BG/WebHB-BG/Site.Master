@@ -25,6 +25,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
     <link href="plantilla/datatables/dataTables.dataTables.min.css" rel="stylesheet" />
     <script src="plantilla/datatables/dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> <!-- Plugin para etiquetas de datos -->
 </head>
 <body>
     <form runat="server">
@@ -64,10 +66,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
+
                         <a href="Default.aspx" class="nav-item nav-link active">Inicio</a>
+                        <a href="dashboard.aspx" class="nav-item nav-link">Panel de control</a>
                         <a href="Predio.aspx" class="nav-item nav-link">Predio</a>
                         <a href="PropietarioPredio.aspx" class="nav-item nav-link">Propietario Predio</a>
                         <a href="Propietario.aspx" class="nav-item nav-link">Propietario</a>
+                        
 
                     </div>
                 </div>
