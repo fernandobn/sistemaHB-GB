@@ -24,13 +24,22 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.Panel pnlFormulario;
 
         /// <summary>
-        /// Control txtCodigo.
+        /// Control hdnPreId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
+        protected global::System.Web.UI.WebControls.HiddenField hdnPreId;
+
+        /// <summary>
+        /// Control txtCodigoCatastral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCodigoCatastral;
 
         /// <summary>
         /// Control txtFechaIngreso.
@@ -60,31 +69,94 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtNumero;
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control txtNombrePredio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtNombrePredio;
 
         /// <summary>
-        /// Control txtAreaTotalTerreno.
+        /// Control txtAreaTotalTer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalTerreno;
+        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalTer;
 
         /// <summary>
-        /// Control txtAreaTotalConstruccion.
+        /// Control txtAreaTotalConst.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalConstruccion;
+        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalConst;
+
+        /// <summary>
+        /// Control txtObservaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
+
+        /// <summary>
+        /// Control txtDimTomadoPlanos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDimTomadoPlanos;
+
+        /// <summary>
+        /// Control txtOtraFuenteInfo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOtraFuenteInfo;
+
+        /// <summary>
+        /// Control txtNumNuevoBloque.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumNuevoBloque;
+
+        /// <summary>
+        /// Control txtNumAmpliBloque.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumAmpliBloque;
+
+        /// <summary>
+        /// Control ddlTipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipo;
+
+        /// <summary>
+        /// Control txtPropiedadHorizontal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPropiedadHorizontal;
 
         /// <summary>
         /// Control txtFondoRelativo.
@@ -213,13 +285,13 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtDetalleDominio;
 
         /// <summary>
-        /// Control txtTipoMixto.
+        /// Control ddlTipoMixto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipoMixto;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoMixto;
 
         /// <summary>
         /// Control txtValorTipoMixto.
@@ -231,13 +303,13 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtValorTipoMixto;
 
         /// <summary>
-        /// Control txtLinderosDefinidos.
+        /// Control ddlLinderosDefinidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLinderosDefinidos;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLinderosDefinidos;
 
         /// <summary>
         /// Control txtAreaTotalTerrenoAnterior.
@@ -258,58 +330,58 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtLocalizacionOtros;
 
         /// <summary>
-        /// Control txtBienMostrenco.
+        /// Control ddlBienMostrenco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBienMostrenco;
+        protected global::System.Web.UI.WebControls.DropDownList ddlBienMostrenco;
 
         /// <summary>
-        /// Control txtEnConflicto.
+        /// Control ddlEnConflicto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEnConflicto;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEnConflicto;
 
         /// <summary>
-        /// Control txtAreaTotalTerrGrafico.
+        /// Control txtAreaTotalTerGrafico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalTerrGrafico;
+        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalTerGrafico;
 
         /// <summary>
-        /// Control txtPropietarioDesconocido.
+        /// Control ddlPropietarioDesconocido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPropietarioDesconocido;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPropietarioDesconocido;
 
         /// <summary>
-        /// Control txtAreaTotalTerrAlfanum.
+        /// Control txtAreaTotalTerAlfanumerico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalTerrAlfanum;
+        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalTerAlfanumerico;
 
         /// <summary>
-        /// Control txtDominioDetalle.
+        /// Control ddlDominioDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDominioDetalle;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDominioDetalle;
 
         /// <summary>
         /// Control txtDireccionPrincipal.
@@ -321,13 +393,13 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtDireccionPrincipal;
 
         /// <summary>
-        /// Control txtAreaTotalConstAlfanum.
+        /// Control txtAreaTotalConstAlfanumerico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalConstAlfanum;
+        protected global::System.Web.UI.WebControls.TextBox txtAreaTotalConstAlfanumerico;
 
         /// <summary>
         /// Control txtTipoVivienda.
@@ -366,13 +438,13 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtNumCelulares;
 
         /// <summary>
-        /// Control txtModalidadPH.
+        /// Control ddlModalidadPropiedadHorizontal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtModalidadPH;
+        protected global::System.Web.UI.WebControls.DropDownList ddlModalidadPropiedadHorizontal;
 
         /// <summary>
         /// Control txtAlicuotaTotalDeclaratoria.
@@ -384,13 +456,13 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtAlicuotaTotalDeclaratoria;
 
         /// <summary>
-        /// Control txtTipoPropiedadHorizontal.
+        /// Control ddlTipoPropiedadHorizontal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipoPropiedadHorizontal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoPropiedadHorizontal;
 
         /// <summary>
         /// Control txtObservacionPH.
@@ -402,31 +474,31 @@ namespace WebHB_BG
         protected global::System.Web.UI.WebControls.TextBox txtObservacionPH;
 
         /// <summary>
-        /// Control txtHipotecaGAD.
+        /// Control ddlHipotecaGAD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHipotecaGAD;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHipotecaGAD;
 
         /// <summary>
-        /// Control txtRegimenPH.
+        /// Control ddlRegimenPropiedadHorizontal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegimenPH;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRegimenPropiedadHorizontal;
 
         /// <summary>
-        /// Control txtProrrateoTitulo.
+        /// Control ddlProrrateoTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProrrateoTitulo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProrrateoTitulo;
 
         /// <summary>
         /// Control btnGuardar.
@@ -436,6 +508,15 @@ namespace WebHB_BG
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardar;
+
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
         /// Control gvPredios.
