@@ -438,11 +438,12 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Mapa">
                             <ItemTemplate>
-                                <a href='MapaPredio.aspx?id=<%# Eval("pre_id") %>' target="_blank" class="btn btn-sm btn-info">
+                                <a href='MapaPredio.aspx?id=<%# Eval("pre_id") %>&nombre=<%# Eval("pre_nombre_predio") %>&area=<%# Eval("pre_area_total_ter") %>' target="_blank" class="btn btn-sm btn-info">
                                     <i class="fas fa-map-marked-alt"></i> Ver
                                 </a>
                             </ItemTemplate>
                         </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Acciones">
                             <ItemTemplate>
                                 <asp:LinkButton ID="btnEditar" runat="server" CommandName="Editar" CommandArgument='<%# Eval("pre_id") %>' 
