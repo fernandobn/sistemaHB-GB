@@ -204,27 +204,38 @@
         </div>
     </asp:Panel>
 
-    <asp:GridView ID="gvPropietariosPredio" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="20"
-        OnPageIndexChanging="gvPropietariosPredio_PageIndexChanging" OnRowCommand="gvPropietariosPredio_RowCommand"
-        CssClass="table table-bordered table-hover mt-5 shadow-sm">
-        <Columns>
-            <asp:BoundField DataField="prp_id" HeaderText="ID" ReadOnly="true" />
-            <asp:BoundField DataField="propietario" HeaderText="Propietario" />
-            <asp:BoundField DataField="pro_num_identificacion" HeaderText="Identificación" />
-            <asp:BoundField DataField="predio_info" HeaderText="Predio" />
-            <asp:BoundField DataField="prp_alicuota" HeaderText="Alicuota" DataFormatString="{0:N2}" />
-            <asp:BoundField DataField="prp_anios_posesion" HeaderText="Años Posesión" />
-            <asp:BoundField DataField="tiene_escritura" HeaderText="Tiene Escritura" />
-            <asp:BoundField DataField="tipo_propietario" HeaderText="Tipo" />
-            <asp:TemplateField HeaderText="Acciones">
-                <ItemTemplate>
-                    <asp:Button ID="btnEditar" runat="server" CommandName="Editar" CommandArgument='<%# Eval("prp_id") %>' Text="Editar" CssClass="btn btn-sm btn-outline-primary me-2" />
-                    <asp:Button ID="btnEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("prp_id") %>' Text="Eliminar" CssClass="btn btn-sm btn-outline-danger"
-                        OnClientClick='<%# "return confirmarEliminacion(event, \"" + Eval("prp_id") + "\");" %>' />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+<asp:UpdatePanel ID="updGrid" runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
+        <asp:GridView ID="gvPropietariosPredio" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="20"
+            OnPageIndexChanging="gvPropietariosPredio_PageIndexChanging" OnRowCommand="gvPropietariosPredio_RowCommand"
+            CssClass="table table-bordered table-hover mt-5 shadow-sm">
+            <Columns>
+                <asp:BoundField DataField="prp_id" HeaderText="ID" ReadOnly="true" />
+                <asp:BoundField DataField="propietario" HeaderText="Propietario" />
+                <asp:BoundField DataField="pro_num_identificacion" HeaderText="Identificación" />
+                <asp:BoundField DataField="predio_info" HeaderText="Predio" />
+                <asp:BoundField DataField="prp_alicuota" HeaderText="Alicuota" DataFormatString="{0:N2}" />
+                <asp:BoundField DataField="prp_anios_posesion" HeaderText="Años Posesión" />
+                <asp:BoundField DataField="tiene_escritura" HeaderText="Tiene Escritura" />
+                <asp:BoundField DataField="tipo_propietario" HeaderText="Tipo" />
+                <asp:TemplateField HeaderText="Acciones">
+                    <ItemTemplate>
+                        <asp:Button ID="btnEditar" runat="server" CommandName="Editar" CommandArgument='<%# Eval("prp_id") %>' Text="Editar" CssClass="btn btn-sm btn-outline-primary me-2" />
+                        <asp:Button ID="btnEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("prp_id") %>' Text="Eliminar" CssClass="btn btn-sm btn-outline-danger"
+                            OnClientClick='<%# "return confirmarEliminacion(event, \"" + Eval("prp_id") + "\");" %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+    </ContentTemplate>
+    <Triggers>
+        <asp:AsyncPostBackTrigger ControlID="gvPropietariosPredio" EventName="PageIndexChanging" />
+        <asp:AsyncPostBackTrigger ControlID="gvPropietariosPredio" EventName="RowCommand" />
+    </Triggers>
+</asp:UpdatePanel>
+
 </div>
 
 

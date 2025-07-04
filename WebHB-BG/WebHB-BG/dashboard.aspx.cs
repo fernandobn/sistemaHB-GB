@@ -18,7 +18,7 @@ namespace WebHB_BG
             parroquias = new List<string>();
             prediosPorParroquia = new List<int>();
 
-            string connectionString = "Host=localhost;Port=5432;Database=minicipio;Username=postgres;Password=F3rtipan77;Pooling=true;SSL Mode=Prefer;";
+            string connectionString = "Host=localhost;Port=5432;Database=municipioMejia;Username=postgres;Password=root;Pooling=true;SSL Mode=Prefer;";
             string queryParroquias = @"
                 SELECT pr.par_nombre, COUNT(vp.pre_id) AS total_predios
                 FROM catastro.vst_predio vp

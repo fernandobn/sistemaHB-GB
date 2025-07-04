@@ -334,6 +334,7 @@
     <Compile Include="PropietarioPredio.aspx.designer.cs">
       <DependentUpon>PropietarioPredio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PropietarioPredioDTO.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

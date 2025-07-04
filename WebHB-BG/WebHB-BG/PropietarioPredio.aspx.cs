@@ -428,15 +428,17 @@ namespace WebHB_BG
             }
         }
 
-        protected void gvPropietariosPredio_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gvPropietariosPredio.PageIndex = e.NewPageIndex;
-            CargarPropietariosPredio();
-        }
+      
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("PropietarioPredio.aspx");
         }
+        protected void gvPropietariosPredio_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPropietariosPredio.PageIndex = e.NewPageIndex;
+            CargarPropietariosPredio(); // Recargar los datos con la nueva página
+        }
+
     }
 }

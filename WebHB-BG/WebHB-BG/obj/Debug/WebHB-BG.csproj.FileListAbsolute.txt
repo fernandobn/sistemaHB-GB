@@ -768,3 +768,9 @@ D:\Octavo\02_Inteligencia de Negocios BI\proyecto\sistemaHB-GB\WebHB-BG\WebHB-BG
 D:\Octavo\02_Inteligencia de Negocios BI\proyecto\sistemaHB-GB\WebHB-BG\WebHB-BG\obj\Debug\WebHB-BG.csproj.Up2Date
 D:\Octavo\02_Inteligencia de Negocios BI\proyecto\sistemaHB-GB\WebHB-BG\WebHB-BG\obj\Debug\WebHB-BG.dll
 D:\Octavo\02_Inteligencia de Negocios BI\proyecto\sistemaHB-GB\WebHB-BG\WebHB-BG\obj\Debug\WebHB-BG.pdb
+C:\Users\User\source\repos\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\NetTopologySuite.dll
+C:\Users\User\source\repos\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\NetTopologySuite.IO.PostGis.dll
+C:\Users\User\source\repos\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\Npgsql.NetTopologySuite.dll
+C:\Users\User\source\repos\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\NetTopologySuite.xml
+C:\Users\User\source\repos\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\NetTopologySuite.IO.PostGis.xml
+C:\Users\User\source\repos\sistemaHB-GB\WebHB-BG\WebHB-BG\bin\Npgsql.NetTopologySuite.xml
